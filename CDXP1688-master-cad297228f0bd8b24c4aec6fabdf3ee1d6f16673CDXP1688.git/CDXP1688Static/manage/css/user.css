@@ -1,0 +1,19 @@
+.user {
+  background-image:url('../images/1.jpg');
+  background-size:cover;
+}
+
+.user .table td {
+  vertical-align: middle;
+}
+
+.user .bg-color{
+  background:rgb(43, 46, 44);
+}
+.user .sfgl-color{
+  color: #ffffff;
+}
+.user .zt-color{
+  background-color:  rgb(213, 245, 255);
+  color: #000000;
+}

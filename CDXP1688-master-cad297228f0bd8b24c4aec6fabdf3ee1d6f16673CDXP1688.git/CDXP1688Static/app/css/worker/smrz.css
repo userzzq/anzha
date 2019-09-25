@@ -1,0 +1,92 @@
+.worker-smrz{
+  position: relative;
+  background: rgb(233, 233, 233);
+  height: 100%;
+}
+.worker-smrz  .yellow {
+  background: #e72d20;
+  color: #ffffff;
+  padding: 1.5rem 0rem 1.5rem 0rem;
+}
+
+.worker-smrz  .arrow:after {
+  content: ' ';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  -webkit-transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+  transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+}
+
+.worker-smrz  .div-zy {
+  display: flex;
+}
+
+.worker-smrz  .div-zy1 {
+  flex: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.worker-smrz  .div-zy2 {
+  flex: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*div比例*/
+.worker-smrz .zuoyoubili1 {
+  flex: 70%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: #ffffff;
+}
+
+.worker-smrz .zuoyoubili2 {
+  flex: 30%;
+  background: #ffffff;
+  color: #e72d20;
+}
+.worker-smrz .pd10 {
+  background: #ffffff;
+  padding: 1.5rem;
+  color: #e72d20;
+}
+
+.worker-smrz .pd11{
+  padding: 1.5rem 0rem 0rem 0rem;
+}
+.worker-smrz .pd12{
+  padding: 0rem 0rem 0rem 1.5rem;
+}
+
+.worker-smrz .bk{
+  border-bottom: 1px solid rgb(233, 233, 233);
+}
+.worker-smrz .sm-btn{
+  color: #ffffff;
+  background: #e72d20;
+  padding: 0.8rem 12rem 0.8rem 12rem;
+}
+.worker-smrz .qzjz{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.worker-smrz .ztcolor{
+  color: rgb(115, 120, 124);
+}
+
+/*文本框隐身*/
+.worker-smrz .inputborderpx{
+ border-left: 0px;
+ border-top: 0px;
+ border-right: 0px;
+ border-bottom:0px; 
+ background-color: transparent;
+ outline: none;
+}

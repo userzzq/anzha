@@ -1,0 +1,126 @@
+.user-ywcweixiudd .zuoyou {
+  display: flex;
+  width: 28rem;
+  background: #ffffff;
+}
+/*div比例*/
+.user-ywcweixiudd .zuoyou1 {
+  flex: 3%;
+  background: #a0a0a0;
+}
+.user-ywcweixiudd .zuoyou2 {
+  flex: 97%;
+}
+.user-ywcweixiudd .zy {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+}
+.user-ywcweixiudd .zy1 {
+  flex: 60%;
+}
+.user-ywcweixiudd .zy2 {
+  flex: 40%;
+}
+.user-ywcweixiudd .zy3 {
+  flex: 20%;
+}
+
+.user-ywcweixiudd .zy4 {
+  flex: 80%;
+}
+
+.user-ywcweixiudd .jz {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.user-ywcweixiudd .bj {
+  padding: 1rem 0rem 0rem 1rem;
+}
+.user-ywcweixiudd .span-color {
+  background: #e72d20;
+  color: #ffffff;
+  padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+}
+
+.user-ywcweixiudd .weixiudingdan-form {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.user-ywcweixiudd .input-group-addon:first-child {
+  border-right: 0;
+  color: #ffffff;
+  background-color: #e72d20;
+}
+
+.user-ywcweixiudd .weixiudingdan-form .input-group {
+  margin: 1rem 0px;
+}
+.user-ywcweixiudd .write {
+  color: #ffffff;
+}
+.user-ywcweixiudd .div-head {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: #e72d20;
+}
+
+.user-ywcweixiudd .buttons {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  background-color: #e72d20;
+}
+
+.user-ywcweixiudd .button {
+  border-radius: 3px;
+  background-color: #d43030;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;
+  padding: 8px;
+  margin: 5px;
+}
+
+.user-ywcweixiudd .pd10 {
+  padding: 10px;
+}
+
+.user-ywcweixiudd .wz {
+  font-size: 1.5rem;
+  color: #e72d20;
+}
+
+.user-ywcweixiudd .wz1 {
+  font-size: 15px;
+  color: rgb(131, 131, 131);
+}
+
+.user-ywcweixiudd .gk {
+  height: 100%;
+  width: 100%;
+  background-image: url('/app/images/lxkf.png');
+}
+
+.user-ywcweixiudd .bianxian {
+  border-top: 0.3rem solid  rgb(187, 184, 184);
+}
+.user-ywcweixiudd .bianxian1 {
+  border: 0.1rem solid #f55656;
+  border-radius: 0.4rem;
+  margin: 0.3rem;
+}
+
+.user-ywcweixiudd .fx {
+  display: flex;
+}
+
+.user-ywcweixiudd .fx > div {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0.8rem;
+}

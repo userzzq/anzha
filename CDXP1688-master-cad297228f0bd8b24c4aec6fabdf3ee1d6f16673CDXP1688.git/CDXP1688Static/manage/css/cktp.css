@@ -1,0 +1,11 @@
+.cktp .cktpys {
+  text-align: center;
+  color: blue;
+}
+
+.cktp .cktpys span {
+  display: inline-block;
+  text-decoration: underline;
+  margin: 1rem;
+  cursor: pointer;
+}

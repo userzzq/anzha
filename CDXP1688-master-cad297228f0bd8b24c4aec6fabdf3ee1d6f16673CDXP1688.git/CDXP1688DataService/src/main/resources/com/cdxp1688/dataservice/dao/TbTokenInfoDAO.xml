@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbTokenInfoDAO">
+    
+  <select id="queryAll" resultType="TbTokenInfo">
+    select token,infoKey,info,lastupdate from TbTokenInfo
+  </select>
+  
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbTokenInfo
+  </select>
+  
+  <select id="queryByKey" parameterType="TbTokenInfo" resultType="TbTokenInfo">
+    select token,infoKey,info,lastupdate from TbTokenInfo 
+    where token=#{token} and infoKey=#{infoKey}
+  </select>
+  
+  <insert id="add" parameterType="TbTokenInfo">
+    insert into TbTokenInfo(info,lastupdate)
+    values(#{info},#{lastupdate})
+  </insert>
+  
+  <update id="update" parameterType="TbTokenInfo">
+    update TbTokenInfo set info=#{info},lastupdate=#{lastupdate}
+    where token=#{token} and infoKey=#{infoKey}
+  </update>
+  
+  <delete id="delete" parameterType="TbTokenInfo" >
+    delete from TbTokenInfo
+    where token=#{token} and infoKey=#{infoKey}
+  </delete>
+  
+</mapper>

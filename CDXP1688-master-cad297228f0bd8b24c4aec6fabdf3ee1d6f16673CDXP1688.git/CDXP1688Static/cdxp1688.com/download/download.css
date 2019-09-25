@@ -1,0 +1,20 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img-div {
+  width: 25rem;
+  margin: 0px auto;
+}
+
+.img-div img {
+  width: 100%;
+}

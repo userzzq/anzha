@@ -1,0 +1,60 @@
+.user-cankaojia .cankaojia-form {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.user-cankaojia .input-group-addon:first-child {
+  border-right: 0;
+  color: #ffffff;
+  background-color: #e72d20;
+}
+
+
+.user-cankaojia .cankaojia-form .input-group {
+  margin: 1rem 0px;
+}
+.user-cankaojia .write {
+  color: #ffffff;
+}
+.user-cankaojia .div-head {
+  top: 0px;
+  background-color: #e72d20;
+}
+
+.user-cankaojia .buttons {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  background-color:#e72d20 ;
+}
+
+.user-cankaojia .button {
+ 
+  border-radius: 3px;
+  background-color: #f17a72;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 25px;
+  padding: 8px;
+}
+
+.user-cankaojia .pd10 {
+  padding: 10px;
+}
+
+.user-cankaojia .wz {
+  font-size: 1.5rem;
+  color: #e72d20;
+}
+
+.user-cankaojia .wz1 {
+  font-size: 15px;
+  color: rgb(131, 131, 131);
+}
+
+.user-cankaojia .gk{
+  height: 100%;
+  width: 100%;
+}
+

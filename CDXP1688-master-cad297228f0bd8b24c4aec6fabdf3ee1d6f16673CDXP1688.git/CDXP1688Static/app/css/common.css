@@ -1,0 +1,32 @@
+/*项目公用css*/
+html,
+body {
+  /* height: 100%; */
+  overflow: auto;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.hv100 {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+* {
+  word-break: break-all;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.mr10 {
+  margin: 10px;
+}

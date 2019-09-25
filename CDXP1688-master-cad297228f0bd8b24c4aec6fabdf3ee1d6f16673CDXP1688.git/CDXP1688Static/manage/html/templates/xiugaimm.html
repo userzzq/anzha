@@ -1,0 +1,28 @@
+<div ng-controller="WorkerXiugaimmCtrl" class="xiugaimm">
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon zt-color">
+        旧密码:
+      </span>
+      <input type="password" class="form-control" ng-model="oldPwd">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon zt-color">
+        新密码:
+      </span>
+      <input type="password" class="form-control"  ng-model="tbAdminUser.password">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon zt-color">
+        确认密码:
+      </span>
+      <input type="password" class="form-control" ng-model="model.password">
+    </div>
+  </div>
+  <div class="text-center">
+    <span class="btn btn-info" ng-click="xgmm();">修改密码</span>
+    <span class="btn btn-info" ng-click="closeMe();">结束操作</span>
+  </div>
+</div>

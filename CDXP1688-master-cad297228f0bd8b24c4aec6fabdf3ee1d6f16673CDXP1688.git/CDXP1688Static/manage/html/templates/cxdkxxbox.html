@@ -1,0 +1,54 @@
+<div ng-controller="CxdkxxboxCtrl">
+  <div>
+    <div class="text-center">未打款金额：<span class="text-danger" ng-bind="worker.needPay"></span>,已打款金额：<span class="text-primary" ng-bind="worker.payTotal"></span></div>
+    <table class="table table-hover">
+      <thead>
+        <thead>
+          <tr class="bg-info">
+              <th>姓名</th>
+            <th>打款金额</th>
+            <th>打款时间</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr ng-repeat="d in list">
+          <td ng-bind="worker.name"></td>
+          <td ng-bind="d.price"></td>
+          <td show-time="{{d.lastupdate}}" show-time-format="y-M-d h:m:s"></td>
+        </tr>
+      </tbody>
+      </thead>
+    </table>
+  </div>
+
+  
+
+
+  <div>
+    <nav class="text-center">
+      <ul class="pagination">
+        <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+          <a href="javascript:void(0);" ng-click="toPage(1);">首页</a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageNumber-1);">上一页</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            {{page.total}}/{{page.pageNumber}}/{{page.pageCount}}
+          </a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageNumber+1);">下一页</a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageCount);">尾页</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="text-center">
+    <span class="btn btn-info" ng-click="closeMe();">关闭</span>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbUserDAO">
+
+  <select id="login" parameterType="TbUser" resultType="TbUser">
+    select uid,phone,password,name,address,isEnable,lastupdate from TbUser
+    where phone=#{phone}
+  </select>
+
+  <select id="queryByPhone" parameterType="TbUser" resultType="TbUser">
+    select uid,phone,password,name,address,isEnable,lastupdate from TbUser
+    where phone=#{phone}
+  </select>
+
+  <select id="queryAll" parameterType="TbUser" resultType="TbUser">
+    select uid,phone,password='*****',name,address,isEnable,lastupdate from TbUser
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过isEnable过滤 -->
+      <if test="isEnable=='y'.toString() || isEnable=='n'.toString()">
+        and isEnable=#{isEnable}
+      </if>
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and phone like #{phone}
+      </if>
+      <!-- 通过name过滤 -->
+      <if test="name!=null and name!=''">
+        and name like #{name}
+      </if>
+    </trim>
+    order by lastupdate desc
+  </select>
+
+  <select id="queryAll_COUNT" parameterType="TbUser" resultType="int">
+    select count(*) from TbUser
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过isEnable过滤 -->
+      <if test="isEnable=='y'.toString() || isEnable=='n'.toString()">
+        and isEnable=#{isEnable}
+      </if>
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and phone like #{phone}
+      </if>
+    </trim>
+  </select>
+
+  <update id="updateEnable" parameterType="TbUser">
+    update TbUser set isEnable=#{isEnable} where uid=#{uid}
+  </update>
+
+  <select id="queryByKey" parameterType="TbUser" resultType="TbUser">
+    select uid,phone,password,name,address,isEnable,lastupdate from TbUser
+    where uid=#{uid}
+  </select>
+
+  <insert id="add" parameterType="TbUser">
+    insert into TbUser(phone,password,name,address)
+    values(#{phone},#{password},#{name},#{address})
+  </insert>
+
+  <update id="update" parameterType="TbUser">
+    update TbUser set password=#{password}
+    <if test="name!=null and name!=''">,name=#{name}</if>
+    <if test="address!=null and address!=''">,address=#{address}</if>
+    where uid=#{uid}
+  </update>
+
+  <update id="modifyPwd" parameterType="TbUser">
+    update TbUser set password=#{password}
+    where uid=#{uid}
+  </update>
+
+  <delete id="delete" parameterType="TbUser">
+    delete from TbUser
+    where uid=#{uid}
+  </delete>
+
+</mapper>

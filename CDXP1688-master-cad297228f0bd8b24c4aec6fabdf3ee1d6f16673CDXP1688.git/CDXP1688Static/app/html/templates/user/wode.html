@@ -1,0 +1,102 @@
+<div ng-controller="UserWoDeCtrl" class="h100 user-wode">
+  <div class="div-head bianxian1">
+    <div class="pd20 alpha-div" ng-click="topage('/user/index');">
+      <span class="h3 write">
+        <i class="pd10 glyphicon glyphicon-chevron-left"></i>
+        我的
+      </span>
+    </div>
+  </div>
+  <div class="div-body">
+    <div class="zuoyou topxiangshou2" ng-click="gerenxinxi();">
+      <div class="zuoyoubili3 pd10">
+        <div class="txyuan"></div>
+      </div>
+      <div class="zuoyoubili2">
+        <div>
+          <span ng-bind="user.name"></span>
+        </div>
+        <div>
+          <span ng-bind="user.phone"></span>
+        </div>
+      </div>
+      <div class="zuoyoubili1">
+        <span class="arrow"></span>
+      </div>
+    </div>
+    <div class="juli">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="pd10">
+              <span class="iconfont biaoqian-color">&#xe60d;</span>
+              <span>常用工具</span>
+            </div>
+            <div class="zy1">
+              <div class="zy2" ng-click="zwkf();">
+                <div class="tbdx">
+                  <span class="iconfont">&#xe61d;</span>
+                </div>
+                <div>我的钱包</div>
+              </div>
+              <div class="zy2" ng-click="zwkf();">
+                <div class="tbdx">
+                  <span class="iconfont">&#xe779;</span>
+                </div>
+                <div>我的消息</div>
+              </div>
+              <div class="zy2" ng-click="lianxikefu()">
+                <div class="tbdx">
+                  <span class="iconfont">&#xe647;</span>
+                </div>
+                <div>联系客服</div>
+              </div>
+
+              <div class="zy2" ng-click="gdjc();">
+                <div class="tbdx">
+                  <span class="iconfont">&#xe673;</span>
+                </div>
+                <div>更多精彩</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="juli">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="pd10">
+              <span class="iconfont biaoqian-color">&#xe60d;</span>
+              <span>我的订单</span>
+            </div>
+            <div class="zy1">
+              <div class="zy2" ng-click="weixiudingdan();">
+                <div class="tbdx">
+                  <span class="iconfont">&#xe6bd;</span>
+                </div>
+                <div>服务订单</div>
+              </div>
+              <div class="zy2" ng-click="zwkf();">
+                <div class="tbdx">
+                  <span class="iconfont">&#xe6fc;</span>
+                </div>
+                <div>材料明细</div>
+              </div>
+              <div class="zy2" ng-click="zwkf();">
+                <div class="tbdx">
+                  <span class="iconfont">&#xe638;</span>
+                </div>
+                <div>维修参考价格</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center juli">
+    <span class="btn aqdl-btn" ng-click="logout();"><i class="iconfont">&#xe671;</i>安全退出</span>
+  </div>

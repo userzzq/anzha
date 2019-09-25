@@ -1,0 +1,41 @@
+.worker-xiaoxi {
+  overflow: auto !important;
+}
+
+.worker-xiaoxi .zuoyou {
+  display: flex;
+  width: 28rem;
+  background: #ffffff;
+}
+/*div比例*/
+.worker-xiaoxi .zuoyou1 {
+  flex: 3%;
+  background: #a0a0a0;
+}
+.worker-xiaoxi .zuoyou2 {
+  flex: 97%;
+}
+.worker-xiaoxi .zy {
+  display: flex;
+  height: 5rem;
+  width: 100%;
+}
+.worker-xiaoxi .zy1 {
+  flex: 60%;
+}
+.worker-xiaoxi .zy2 {
+  flex: 40%;
+}
+.worker-xiaoxi .jz {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+.worker-xiaoxi .bj {
+  padding: 1rem 0rem 0rem 1rem;
+}
+.worker-xiaoxi .span-color {
+  background: #e72d20;
+  color: #ffffff;
+  padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbUserFixInfoDAO">
+
+  <select id="queryByUser" resultType="TbUserFixInfo" parameterType="TbUserFixInfo">
+    select uf.ufid,uf.uid,uf.info,uf.address,uf.addressInfo,uf.lat,uf.lng,uf.phone,uf.fixtype,uf.images,uf.status,uf.lastupdate
+    ,w.name 'worker.name',w.phone 'worker.phone'
+    ,(select sum(price) from TbFixOrderDetail where ufoid=ufo.ufoid) 'price'
+    from TbUserFixInfo uf
+    left join TbUserFixOrder ufo on ufo.ufid=uf.ufid
+    left join
+    TbWorker w on ufo.wid=w.wid
+    where uf.uid=#{uid} and uf.status not in('12','99')
+    order by uf.lastupdate desc
+  </select>
+
+  <select id="queryByUser_COUNT" resultType="int" parameterType="TbUser">
+    select count(*) from TbUserFixInfo where uid=#{uid} and status not in('12','99')
+    order by lastupdate desc
+  </select>
+
+  <select id="queryByUserFinish" resultType="TbUserFixInfo" parameterType="TbUserFixInfo">
+    select uf.ufid,uf.uid,uf.info,uf.address,uf.addressInfo,uf.lat,uf.lng,uf.phone,uf.fixtype,uf.images,uf.status,uf.lastupdate
+    ,w.name 'worker.name',w.phone 'worker.phone'
+    ,(select sum(price) from TbFixOrderDetail where ufoid=ufo.ufoid) 'price'
+    from TbUserFixInfo uf
+    left join TbUserFixOrder ufo on ufo.ufid=uf.ufid
+    left join
+    TbWorker w on ufo.wid=w.wid
+    where uf.uid=#{uid} and uf.status in('12','99')
+    order by uf.lastupdate desc
+  </select>
+
+  <select id="queryByUserFinish_COUNT" resultType="int" parameterType="TbUser">
+    select count(*) from TbUserFixInfo where uid=#{uid} and status in('12','99')
+    order by lastupdate desc
+  </select>
+
+  <select id="queryWorkerFixinfo" resultType="TbUserFixInfo" parameterType="TbUserFixInfo">
+    select ufi.ufid,ufi.uid,ufi.info,ufi.address,ufi.addressInfo,ufi.lat,ufi.lng,ufi.phone,ufi.images,ufi.fixtype,ufi.status,ufi.lastupdate
+    ,u.phone 'user.phone',u.name 'user.name'
+    from TbUserFixInfo ufi
+    left join
+    TbUser u on ufi.uid=u.uid
+    where ufi.status = 10
+    order by ufi.lastupdate
+  </select>
+
+  <select id="queryWorkerFixinfo_COUNT" resultType="int" parameterType="TbUserFixInfo">
+    select count(*) from TbUserFixInfo where status = 10
+  </select>
+
+  <select id="queryAll" resultType="TbUserFixInfo" parameterType="TbUserFixInfo">
+    select ufi.ufid,ufi.uid,ufi.info,ufi.address,ufi.addressInfo,ufi.lat,ufi.lng,ufi.phone,ufi.images,ufi.fixtype,ufi.status,ufi.lastupdate
+    ,u.phone 'user.phone',u.name 'user.name',w.wid 'worker.wid',w.name 'worker.name',w.phone 'worker.phone'
+    from TbUserFixInfo ufi
+    left join TbUser u on ufi.uid=u.uid
+    left join TbUserFixOrder ufo on ufo.ufid=ufi.ufid
+    left join TbWorker w on ufo.wid=w.wid
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and ufi.phone like #{phone}
+      </if>
+      <!-- 通过fixtype过滤 -->
+      <if test="fixtype!=null and fixtype!=''">
+        and ufi.fixtype=#{fixtype}
+      </if>
+      <!-- 通过status过滤 -->
+      <if test="status!=null and status!=''">
+        and ufi.status=#{status}
+      </if>
+    </trim>
+    order by ufi.lastupdate desc
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int" parameterType="TbUserFixInfo">
+    select count(*) from TbUserFixInfo
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and phone like #{phone}
+      </if>
+      <!-- 通过fixtype过滤 -->
+      <if test="fixtype!=null and fixtype!=''">
+        and fixtype=#{fixtype}
+      </if>
+      <!-- 通过status过滤 -->
+      <if test="status!=null and status!=''">
+        and status=#{status}
+      </if>
+    </trim>
+  </select>
+
+  <update id="updateImages" parameterType="TbUserFixInfo">
+    update TbUserFixInfo set images=#{images} where ufid=#{ufid}
+  </update>
+
+  <select id="queryByKey" parameterType="TbUserFixInfo" resultType="TbUserFixInfo">
+    select ufid,uid,info,address,addressInfo,lat,lng,phone,fixtype,status,lastupdate from TbUserFixInfo
+    where ufid=#{ufid}
+  </select>
+
+  <select id="queryByUserKey" parameterType="TbUserFixInfo" resultType="TbUserFixInfo">
+    select ufid,uid,info,address,addressInfo,lat,lng,phone,fixtype,status,lastupdate from TbUserFixInfo
+    where ufid=#{ufid} and uid=#{uid}
+  </select>
+
+  <insert id="add" parameterType="TbUserFixInfo" useGeneratedKeys="true" keyProperty="ufid">
+    insert into TbUserFixInfo(uid,info,address,addressInfo,lat,lng,phone,fixtype,status)
+    values(#{uid},#{info},#{address},#{addressInfo},#{lat},#{lng},#{phone},#{fixtype},#{status})
+  </insert>
+
+  <update id="updateStatus" parameterType="TbUserFixInfo">
+    update TbUserFixInfo set status=#{status} where ufid=#{ufid}
+  </update>
+
+  <update id="update" parameterType="TbUserFixInfo">
+    update TbUserFixInfo set
+    uid=#{uid},address=#{address},addressInfo=#{addressInfo},lat=#{lat},lng=#{lng},phone=#{phone},fixtype=#{fixtype},status=#{status}
+    where ufid=#{ufid}
+  </update>
+
+  <delete id="delete" parameterType="TbUserFixInfo">
+    delete from TbUserFixInfo
+    where ufid=#{ufid}
+  </delete>
+
+  <update id="updateOut_trade_no" parameterType="TbUserFixInfo">
+    update TbUserFixInfo set out_trade_no=#{out_trade_no} where ufid=#{ufid}
+  </update>
+  <update id="updateOut_trade_noStatus" parameterType="TbUserFixInfo">
+    update TbUserFixInfo set status='15' where out_trade_no=#{out_trade_no} and status='14'
+  </update>
+
+</mapper>

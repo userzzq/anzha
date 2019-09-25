@@ -1,0 +1,87 @@
+<div ng-controller="UserReRenXinXiCtrl" class="h100 user-gerenxinxi">
+
+  <div class="top-bar yellow div-zy" fixed-top>
+    <div class="div-zy1">
+      <span class="arrow" ng-click="fanhui();"></span>
+    </div>
+    <div class="h4 content div-zy2 text-center">
+      <span>个人信息</span>
+    </div>
+    <div class="div-zy1"></div>
+  </div>
+
+  <div class="pd5">
+    <div class="div-zy bianxian">
+      <div class="zuoyoubili4 pd18">
+        <span class="iconfont pd6">&#xe60c;</span>
+        姓名
+      </div>
+      <div class="zuoyoubili3">
+        <span ng-bind="user.name"></span>
+      </div>
+    </div>
+
+    <div class="div-zy">
+      <div class="zuoyoubili4 pd18">
+        <span class="iconfont pd6">&#xe60a;</span>
+        性别
+      </div>
+      <div class="zuoyoubili3">
+        <select class="div-zy3">
+          <option>男</option>
+          <option>女</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="pd5">
+    <div class="div-zy  bianxian">
+      <div class="zuoyoubili4 pd18">
+        <span class="iconfont pd6">&#xe615;</span>
+        手机号码
+      </div>
+      <div class="zuoyoubili3" ng-bind="user.phone">
+
+      </div>
+    </div>
+    <div class="div-zy " ng-click="topage('/user/xgdlmm');">
+      <div class="zuoyoubili2 pd18">
+        <span class="iconfont pd6">&#xe86b;</span>
+        修改登录密码
+      </div>
+      <div class="zuoyoubili1">
+        <span class="arrow1"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pd5">
+    <!-- <div class="div-zy  bianxian">
+      <div class="zuoyoubili2 pd10">
+        <span class="iconfont pd6">&#xe86b;</span>
+        修改支付密码
+      </div>
+      <div class="zuoyoubili1">
+        <span class="arrow1"></span>
+      </div>
+    </div> -->
+    <div class="div-zy">
+      <div class="zuoyoubili2 pd18">
+        <span class="iconfont pd6">&#xe65b;</span>
+        所属区域
+      </div>
+      <div class="zuoyoubili1">
+        <span class="arrow1"></span>
+      </div>
+    </div>
+  </div>
+  <div class="div-zy topxiangshou bianxian">
+    <div class="zuoyoubili2 pd18">
+      <span class="iconfont pd6">&#xe652;</span>
+      评价
+    </div>
+    <div class="zuoyoubili1">
+      <span class="arrow1"></span>
+    </div>
+  </div>
+</div>

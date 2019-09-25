@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbConfigDAO">
+
+  <select id="queryWorkerOnlineConfig" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey='worker.online'
+  </select>
+
+  <select id="querySmsConfig" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey='SmsConfig'
+  </select>
+
+  <select id="queryPayConfig" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey='PayConfig'
+  </select>
+
+  <select id="queryWxConfig" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey='WxConfig'
+  </select>
+
+  <select id="queryCallbackUrlsConfig" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey='CallbackUrlsConfig'
+  </select>
+  
+  <select id="queryWxPayInfo" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey='WxPayInfo'
+  </select>
+
+  <select id="queryUpfileConfig" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey='upfile.server'
+  </select>
+
+  <select id="queryAll" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbConfig
+  </select>
+
+  <select id="queryByKey" parameterType="TbConfig" resultType="TbConfig">
+    select configKey,configValue,lastupdate from TbConfig
+    where configKey=#{configKey}
+  </select>
+
+  <insert id="add" parameterType="TbConfig">
+    insert into TbConfig(configValue,lastupdate)
+    values(#{configValue},#{lastupdate})
+  </insert>
+
+  <update id="update" parameterType="TbConfig">
+    update TbConfig set configValue=#{configValue},lastupdate=#{lastupdate}
+    where configKey=#{configKey}
+  </update>
+
+  <delete id="delete" parameterType="TbConfig">
+    delete from TbConfig
+    where configKey=#{configKey}
+  </delete>
+
+</mapper>

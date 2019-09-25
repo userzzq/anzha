@@ -1,0 +1,28 @@
+<div class="index h100" ng-controller="IndexCtrl">
+  <div class="div-main">
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title text-center" style="font-size: 2.5rem;">管理员登录</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="iconfont">&#xe604;</i></span>
+            <input type="text" ng-model="tbAdminUser.username" class="form-control" placeholder="请输入登录名称">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="iconfont">&#xe86b;</i></span>
+            <input type="password" ng-model="tbAdminUser.password" class="form-control" placeholder="请输入登录密码">
+          </div>
+        </div>
+        <div class="text-center btn-pd">
+          <span class="btn btn-default aqdl-btn" ng-click="login();"><i class="iconfont">&#xe671;</i>安全登录</span>
+        </div>
+      </div>
+      
+    </div>
+
+
+  </div>
+</div>

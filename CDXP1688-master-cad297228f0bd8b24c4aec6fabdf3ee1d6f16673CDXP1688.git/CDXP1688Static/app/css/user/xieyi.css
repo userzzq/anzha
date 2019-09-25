@@ -1,0 +1,28 @@
+
+.userxieyi .border{
+  border-style:groove;
+  border-width:0.4rem;
+  border-color: #e72d20;
+
+}
+
+.userxieyi .div-body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+
+
+.userxieyi  .write {
+  color: #ffffff;
+}
+.userxieyi  .div-head {
+  top: 0px;
+  background-color: #e72d20;
+}
+
+.userxieyi  .pd10 {
+  padding: 10px;
+}
+
+

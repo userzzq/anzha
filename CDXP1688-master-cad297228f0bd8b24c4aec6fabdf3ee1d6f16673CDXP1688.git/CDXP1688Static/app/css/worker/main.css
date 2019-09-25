@@ -1,0 +1,84 @@
+.worker-main .main {
+  /* position: relative; */
+  background: rgb(233, 233, 233);
+  
+}
+
+.worker-main .top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.worker-main .top-bar .content {
+  padding: 1.5rem;
+}
+
+.worker-main .bottom-menus {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.worker-main .menu {
+  padding: 0.2rem;
+  flex-grow: 1;
+}
+
+.worker-main .include-page {
+  width: 100%;
+}
+
+/* .worker-main .include-page.ng-enter {
+  position: absolute;
+  animation: move-in 0.5s;
+}
+
+.worker-main .include-page.ng-leave {
+  position: absolute;
+  animation: move-out 0.5s;
+}
+
+@keyframes move-in {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+
+@keyframes move-out {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -100%;
+  }
+} */
+.worker-main .yellow {
+  background: #e72d20;
+  color: #ffffff;
+}
+
+.worker-main .baise {
+  background: #ffffff;
+  color: #535252;
+  border-top: 1px solid rgb(196, 196, 196);
+}
+.worker-main .lytbs {
+  background: #ffffff;
+  color: #e72d20;
+}
+.worker-main .lytbs2 {
+  font-size: 2.5rem;
+}

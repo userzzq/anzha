@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>wx支付</title>
+</head>
+
+<body>
+
+  <h1>支付中...</h1>
+  <div id="divParam"></div>
+  <div id="divResult"></div>
+
+  <script>
+    var qs = location.href;
+    qs = qs.substr(qs.indexOf('?') + 1);
+    var jsonParams = {};
+    var params = qs.split('&');
+    for (var i = 0; i < params.length; i++) {
+      param = params[i].split('=');
+      jsonParams[param[0]] = decodeURIComponent(param[1]);
+    }
+    document.getElementById('divParam').innerHTML = JSON.stringify(jsonParams);
+
+    //https://cdxp1688.com/app/wxpay.html?appid=wxc108799082cbbae8&nonce_str=VybjUg5O78BzV6za&package=prepay_id%3Dwx10131121262963655a60b0f21361044734&paySign=83DD0D8C01C6239C3F494A711D28E32C&signType=MD5&timeStamp=1554873081347
+
+    function onBridgeReady() {
+
+      WeixinJSBridge.invoke(
+        'getBrandWCPayRequest', {
+          "appId": jsonParams.appId,
+          "timeStamp": jsonParams.timeStamp,
+          "nonceStr": jsonParams.nonceStr,
+          "package": jsonParams.package,
+          "signType": jsonParams.signType,
+          "paySign": jsonParams.paySign
+        },
+        function (res) {
+          document.getElementById('divResult').innerHTML = JSON.stringify(res);
+          if (res.err_msg == "get_brand_wcpay_request:ok") {
+            // 使用以上方式判断前端返回,微信团队郑重提示：
+            //res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。
+          }
+        });
+    }
+    if (typeof WeixinJSBridge == "undefined") {
+      if (document.addEventListener) {
+        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+      } else if (document.attachEvent) {
+        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+      }
+    } else {
+      onBridgeReady();
+    }
+  </script>
+</body>
+
+</html>

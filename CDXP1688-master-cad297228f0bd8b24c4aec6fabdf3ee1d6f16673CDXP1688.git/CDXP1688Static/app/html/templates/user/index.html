@@ -1,0 +1,41 @@
+<div class="user-index" ng-controller="UserIndexCtrl">
+  <div class="ul1" fixed-top>
+    <div class="li1" ng-click="topage('/user/wode');">
+      <i class="iconfont">&#xe622;</i>
+      <div>我的</div>
+    </div>
+    <div class="li1" ng-click="topage('/user/woyaoxiu');">
+      <i class="iconfont">&#xe70d;</i>
+      <div>我要修</div>
+    </div>
+    <div class="li1" ng-click="topage('/user/woyaoxi');">
+      <i class="iconfont">&#xe634;</i>
+      <div>我要洗</div>
+    </div>
+    <div class="li1" ng-click="topage('/user/woyaozhuang');">
+      <i class="iconfont">&#xe6f3;</i>
+      <div>我要装</div>
+    </div>
+  </div>
+  <div fixed-to-next="fill">
+    <!--
+      <div class="ggborder">
+        <div class="jz">
+          公告栏:<br />
+          &nbsp;&nbsp; 所有水电工13：00到公司开会
+        </div>
+      </div>
+    -->
+    <div class="dtborder h100">
+      <div class="jz" id="mymap">
+        <iframe width=0 height=0 frameborder=0 style="display:none;" scrolling="no" ng-src="{{geoUrl}}"></iframe>
+        <div ng-if="!mapurl">地图加载中...</div>
+        <iframe ng-if="mapurl" id="mapPage" width="100%" height="100%" frameborder="0" ng-src="{{mapurl}}"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="buttons" fixed-bottom>
+    <button class="button" ng-click="topage('/user/likexiadan')"><span>立刻下单</span></button>
+    <button class="button"><span>&nbsp;找熟人&nbsp;</span></button>
+  </div>
+</div>

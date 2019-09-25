@@ -1,0 +1,7 @@
+<div ng-controller="TestMapCtrl" class="test-map h100">
+  <div id="mymap" class="h100">
+    <iframe width=0 height=0 frameborder=0 style="display:none;" scrolling="no" ng-src="{{geoUrl}}"></iframe>
+    <div ng-if="!mapurl">地图加载中...</div>
+    <iframe ng-if="mapurl" id="mapPage" width="100%" height="100%" frameborder="0" ng-src="{{mapurl}}"></iframe>
+  </div>
+</div>

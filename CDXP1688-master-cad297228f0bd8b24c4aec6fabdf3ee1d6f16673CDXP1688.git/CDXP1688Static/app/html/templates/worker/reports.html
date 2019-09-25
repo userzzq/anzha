@@ -1,0 +1,114 @@
+<div ng-controller="WorkerReportsCtrl">
+  <!-- <div>
+    <nav class="text-center">
+      <ul class="pagination">
+        <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+          <a href="javascript:void(0);" ng-click="toPage(1);" >首页</a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageNumber-1);">上一页</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            {{page.total}}/{{page.pageNumber}}/{{page.pageCount}}
+          </a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageNumber+1);">下一页</a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageCount);">尾页</a>
+        </li>
+      </ul>
+    </nav>
+  </div> -->
+  <div class="text-center" style="width: 100%; background-color: #ffffff; padding: 0.8rem;" ng-click="requery();">...点击刷新...</div>
+  <div ng-repeat="d in list">
+    <table class="table table-bordered">
+      <tr>
+        <td>详细地址</td>
+        <td>
+          <span ng-bind="d.address"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>业主姓名</td>
+        <td>
+          <span ng-bind="d.username"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>联系方式</td>
+        <td>
+          <span ng-bind="d.phone"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>面积详情</td>
+        <td>
+          <span ng-bind="d.areainfo"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>开工日期</td>
+        <td>
+          <span show-time="{{d.opendate}}"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>装修公司</td>
+        <td>
+          <span ng-bind="d.decorate"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>最后更新时间</td>
+        <td>
+          <span show-time="{{d.lastupdate}}" show-time-format="y-M-d h:m:s"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>人员信息</td>
+        <td>
+          <table class="table table-bordered">
+            <tr ng-repeat="p in d.peoples">
+              <td>
+                <span ng-bind="p.type.typeName"></span>
+              </td>
+              <td>
+                <span ng-bind="p.username"></span>
+              </td>
+              <td>
+                <span ng-bind="p.phone"></span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="text-center" style="color: #e72d20;" ng-click="ckgd();" ng-if="page.pageNumber < page.pageCount">查看更多</div>
+  <!-- <div>
+    <nav class="text-center">
+      <ul class="pagination">
+        <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+          <a href="javascript:void(0);" ng-click="toPage(1);">首页</a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageNumber-1);">上一页</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);">
+            {{page.total}}/{{page.pageNumber}}/{{page.pageCount}}
+          </a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageNumber+1);">下一页</a>
+        </li>
+        <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+          <a href="javascript:void(0);" ng-click="toPage(page.pageCount);">尾页</a>
+        </li>
+      </ul>
+    </nav>
+  </div> -->
+</div>

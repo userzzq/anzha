@@ -1,0 +1,96 @@
+.baobeiguanli .top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+
+  z-index: 100;
+}
+
+.baobeiguanli .top-bar .content {
+  padding: 1.5rem;
+}
+
+.baobeiguanli .bottom-menus {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.baobeiguanli .menu {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.baobeiguanli .include-page {
+  width: 100%;
+}
+
+.baobeiguanli .include-page.ng-enter {
+  position: absolute;
+  animation: move-in 0.5s;
+}
+
+.baobeiguanli .include-page.ng-leave {
+  position: absolute;
+  animation: move-out 0.5s;
+}
+
+@keyframes move-in {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+
+@keyframes move-out {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+.baobeiguanli .yellow {
+  background: #e72d20;
+  color: #ffffff;
+}
+
+.baobeiguanli .baise {
+  background: #e0dcdc;
+  color: #ffffff;
+}
+
+.baobeiguanli .arrow:after {
+  content: ' ';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  -webkit-transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+  transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+}
+
+.baobeiguanli .div-zy {
+  display: flex;
+}
+
+.baobeiguanli .div-zy1 {
+  flex: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.baobeiguanli .div-zy2 {
+  flex: 80%;
+}

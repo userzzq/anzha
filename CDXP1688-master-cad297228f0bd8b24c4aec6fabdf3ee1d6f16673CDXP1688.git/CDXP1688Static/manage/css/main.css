@@ -1,0 +1,39 @@
+.main .userinfo {
+  padding: 0.5rem;
+}
+
+.main .main-div {
+  display: flex;
+}
+
+.main .main-menus {
+  padding: 0.5rem;
+}
+
+.main .main-menus .btn {
+  margin: 0.5rem 0px;
+}
+
+.main .main-content {
+  flex-grow: 1;
+}
+
+.main .div-fixed {
+  position: fixed;
+  bottom: 0px;
+  width: 0px;
+  height: 0px;
+}
+
+.main .yhxx-color {
+  color: #ffffff;
+}
+.main .bg-color{
+  background: rgb(43, 46, 44);
+}
+.main .btn-color{
+  background: #46b8da;
+}
+.main .btn-color2{
+  background: rgb(154, 222, 243);
+}

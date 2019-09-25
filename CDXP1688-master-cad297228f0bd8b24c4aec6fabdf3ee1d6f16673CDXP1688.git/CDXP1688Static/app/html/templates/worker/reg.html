@@ -1,0 +1,71 @@
+<div ng-controller="WorkerRegCtrl" class="h100 worker-reg">
+  <div class="div-head">
+    <div class="pd10 alpha-div text-center">
+      <span class="h3">
+        服务家信息注册
+      </span>
+    </div>
+  </div>
+
+  <div class="reg-form">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-group types text-center">
+          <span>职业类型</span>
+          <label class="radio-inline" ng-repeat="t in types" ng-click="changeType(t);">
+            <input type="radio" name="worker.type" ng-checked="t==selectedType"><span ng-bind="t.typeName" title="{{t.typeInfo}}"></span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon sp-red">电话</span>
+            <input type="text" ng-model="tbWorker.phone" focus-on="{{focus.phone}}" class="form-control" placeholder="请输入电话">
+            <span class="input-group-addon btn sp-red" ng-click="sendPhoneCode();">获取验证码</span>
+          </div>
+          <!-- 关闭验证码 -->
+          <!-- <div class="text-center types">
+            <span>图片校验码</span>
+            <image-code></image-code>
+            <span>点击图片刷新</span>
+          </div>
+          <div class="input-group">
+            <input type="text" ng-model="model.imageCode" class="form-control" placeholder="请输入图片校验码">
+            <span class="input-group-addon btn sp-red" ng-click="sendPhoneCode();">发送手机验证码</span>
+          </div> -->
+
+          <div class="input-group">
+            <span class="input-group-addon sp-red">手机验证码</span>
+            <input type="text" ng-model="model.phoneCode" class="form-control" placeholder="请输入手机验证码">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon sp-red">姓名</span>
+            <input type="text" ng-model="tbWorker.name" class="form-control" placeholder="请输入姓名">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon sp-red">密码</span>
+            <input type="password" ng-model="tbWorker.password" class="form-control" placeholder="请输入登录密码">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon sp-red">确认密码</span>
+            <input type="password" ng-model="model.password" class="form-control" placeholder="确认密码">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon sp-red">地址</span>
+            <textarea ng-model="tbWorker.address" class="form-control" placeholder="请输入详细地址"></textarea>
+          </div>
+          <div class="text-center">
+            <label>
+              <input type="checkbox" ng-model="tbWorker.agreement">我已阅读并同意
+            </label>
+            <u> <a ng-click="topage('/worker/xy');">壹路巴巴注册协议</a></u>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons text-center" fixed-bottom>
+    <span class="btn button" ng-click="reg();">注册用户</span>
+    <span class="btn button" ng-click="login();">返回登录</span>
+  </div>
+</div>

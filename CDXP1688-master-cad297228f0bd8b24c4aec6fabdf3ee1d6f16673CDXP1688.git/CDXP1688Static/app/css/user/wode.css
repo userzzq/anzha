@@ -1,0 +1,96 @@
+.user-wode{
+  /* background:rgb(233, 233, 233); */
+}
+.user-wode .pd10 {
+  padding:0rem 0rem 0rem 1rem;
+}
+
+.user-wode .pd20 {
+  padding:1rem 0rem 1rem 0rem;
+}
+
+/*顶级div划分内部div左右*/
+.user-wode .zuoyou{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/*div比例*/
+.user-wode .zuoyoubili1 {
+  flex: 10%;
+}
+.user-wode .zuoyoubili3 {
+  flex: 30%;
+}
+.user-wode .zuoyoubili2 {
+  flex: 60%;
+}
+
+.user-wode .zy1{
+  display: flex;
+}
+.user-wode .zy2{
+  flex: 25%;
+  text-align: center;
+}
+
+/*选项设置高度*/
+.user-wode .topxiangshou{
+  height:50px;
+}
+.user-wode .topxiangshou2{
+  height:10rem;
+  background: #e72d20;
+  color: #ffffff;
+}
+/* 选项上下边框样式 */ 
+.user-wode .bianxian{
+  border-bottom: 2px solid   #f8847c;
+}
+
+.user-wode .aqdl-btn{
+  border-color: #e72d20;
+  color: #e72d20;
+  padding: 6px 70px 6px 70px;
+}
+.user-wode .juli{
+  padding: 1rem 1rem 0rem 1rem;
+}
+.user-wode .arrow:after {
+  content: ' ';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+.user-wode .txyuan{
+  width: 6rem;
+  height: 6rem;
+  background-image:url('../images/yhtx.jpg');
+  background-size:cover;
+  border-radius: 6rem;
+}
+.user-wode .tbdx{
+  font-size: 2rem;
+}
+.user-wode .biaoqian-color{
+  color: #e72d20;
+}
+
+
+
+.user-wode .write {
+  color: #ffffff;
+}
+.user-wode .div-head {
+  top: 0px;
+  background-color: #e72d20;
+}
+
+.user-wode .bianxian1{
+  border-bottom: 0.5rem solid   #fcfbfb;
+}

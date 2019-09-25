@@ -1,0 +1,80 @@
+<div ng-controller="WorkerReportCtrl" class="worker-report">
+  <div class="report-form">
+    <div class="panel panel-default">
+
+      <div class="panel-body">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon yellow">业主姓名</span>
+            <input ng-model="tbWorkerReport.username" class="form-control">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon yellow">详细地址</span>
+            <textarea ng-model="tbWorkerReport.address" class="form-control"></textarea>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon yellow">业主电话</span>
+            <input ng-model="tbWorkerReport.phone" class="form-control">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon yellow">面积详情</span>
+            <input ng-model="tbWorkerReport.areainfo" class="form-control">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon yellow">开工日期</span>
+            <input type="text" ng-model="tbWorkerReport.opendate" class="form-control">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon yellow">日期格式：2019-11-09</span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon yellow">装修公司</span>
+            <input ng-model="tbWorkerReport.decorate" class="form-control">
+          </div>
+        </div>
+        <hr>
+        <div>
+          <table class="table table-hover" ng-if="reportPeoples.length>0">
+            <tr ng-repeat="p in reportPeoples">
+              <td>
+                <span ng-bind="showTypeName(p.rtid);"></span>
+              </td>
+              <td>
+                <span ng-bind="p.username"></span>
+              </td>
+              <td>
+                <span ng-bind="p.phone"></span>
+              </td>
+              <td>
+                <span class="btn btn-danger btn-sm" ng-click="removePeople($index);">删除</span>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon yellow">类型</span>
+              <select class="form-control" ng-model="tbReportPeople.rtid">
+                <option ng-repeat="t in types" ng-value="{{t.rtid}}" ng-bind="t.typeName"></option>
+              </select>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon yellow">姓名</span>
+              <input ng-model="tbReportPeople.username" class="form-control">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon yellow">电话</span>
+              <input ng-model="tbReportPeople.phone" class="form-control">
+            </div>
+            <div class="text-center">
+              <span class="btn yellow" ng-click="addPeople();">添加</span>
+              <span class="btn yellow" ng-click="report();">报备</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

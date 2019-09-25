@@ -1,0 +1,17 @@
+<div ng-controller="TestDataServiceCtrl">
+  <div class="div-main">
+    <div ng-bind="token"></div>
+    <div ng-bind="dataServer"></div>
+    <div ng-bind="imageCode"></div>
+    <image-code></image-code>
+    <input type="text" ng-model="formdata.imageCode" placeholder="图片校验码">
+    <span class="btn btn-danger" ng-click="changeImage();">更换图片</span>
+    <input type="text" ng-model="formdata.phone" placeholder="电话">
+    <span class="btn btn-danger" ng-click="sendPhoneCode();">发送</span>
+    <span class="btn btn-danger" ng-click="workerLogout();">师傅退出登录</span>
+    <span class="btn btn-danger" ng-click="queryWorker();">师傅信息查询</span>
+    <span class="btn btn-danger" ng-click="authWorker();">师傅权限测试</span>
+    <span class="btn btn-danger" ng-click="quyerUserFixInfo();">下单查询测试</span>
+
+  </div>
+</div>

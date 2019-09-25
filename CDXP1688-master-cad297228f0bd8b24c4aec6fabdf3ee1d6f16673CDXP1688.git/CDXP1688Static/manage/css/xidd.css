@@ -1,0 +1,50 @@
+.xidd {
+  background-image:url('../images/1.jpg');
+  background-size:cover;
+}
+
+.xidd .table td {
+  vertical-align: middle;
+}
+
+.xidd .bg-color{
+  background:rgb(43, 46, 44);
+}
+.xidd .sfgl-color{
+  color: #ffffff;
+}
+.xidd .zt-color{
+  background-color:  rgb(213, 245, 255);
+  color: #000000;
+}
+.xidd .pd1{
+  padding: 0rem 1rem 0rem 0rem;
+}
+.xidd .btn2-color{
+  color: #ffffff;
+  background-color:rgb(43, 46, 44);
+  border-color: #ffffff;
+}
+.xidd  .div-zy {
+  display: flex;
+}
+
+.xidd .div-zy1 {
+  flex: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.xidd .div-zy2 {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.xidd .djck{
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}

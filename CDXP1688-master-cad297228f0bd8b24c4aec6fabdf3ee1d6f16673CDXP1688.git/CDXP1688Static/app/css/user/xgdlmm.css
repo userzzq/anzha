@@ -1,0 +1,142 @@
+.user-xgdlmm .xgdlmm-form {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.user-xgdlmm .input-group-addon:first-child {
+  border-right: 0;
+  color: #ffffff;
+  background-color: #e72d20;
+}
+
+
+.user-xgdlmm .xgdlmm-form .input-group {
+  margin: 1rem 0px;
+}
+.user-xgdlmm .write {
+  color: #ffffff;
+}
+.user-xgdlmm .div-head {
+  top: 0px;
+  background-color: #e72d20;
+}
+
+.user-xgdlmm .buttons {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  background-color:#e72d20 ;
+}
+
+.user-xgdlmm .button {
+ 
+  border-radius: 3px;
+  background-color: #e72d20;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 20px;
+  padding: 8px;
+}
+
+.user-xgdlmm .pd10 {
+  padding: 10px;
+}
+
+.user-xgdlmm .wz {
+  font-size: 1.5rem;
+  color: #e72d20;
+}
+
+.user-xgdlmm .wz1 {
+  font-size: 15px;
+  color: rgb(131, 131, 131);
+}
+
+.user-xgdlmm .gk{
+  height: 100%;
+  width: 100%;
+}
+
+
+.user-xgdlmm  .yellow {
+  background: #e72d20;
+  color: #ffffff;
+  padding: 1.5rem 0rem 1.5rem 0rem;
+}
+
+.user-xgdlmm  .arrow:after {
+  content: ' ';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  -webkit-transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+  transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+}
+
+.user-xgdlmm  .div-zy {
+  display: flex;
+  width: 100%;
+}
+
+.user-xgdlmm  .div-zy1 {
+  flex: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-xgdlmm  .div-zy2 {
+  flex: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-xgdlmm  .div-zy3 {
+  flex: 20%;
+  display: flex;
+
+  align-items: center;
+}
+.user-xgdlmm  .div-zy4 {
+  flex: 80%;
+  display: flex;
+
+  align-items: center;
+}
+.user-xgdlmm .qzjz{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-xgdlmm .gk1{
+  display: flex;
+  height: 30rem;
+}
+.user-xgdlmm .jr-color{
+  color: #e72d20;
+}
+.user-xgdlmm .inputborderpx{
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom:0px; 
+  background-color: transparent;
+  outline: none;
+ }
+
+ .user-xgdlmm .sbj{
+  padding: 5rem 0rem 0rem 0rem;
+ }
+
+ 
+ .user-xgdlmm .zbj{
+padding: 0rem 0rem 0rem 1.5rem ;
+}
+
+.user-xgdlmm .wz-color{
+  color: #949494;
+}

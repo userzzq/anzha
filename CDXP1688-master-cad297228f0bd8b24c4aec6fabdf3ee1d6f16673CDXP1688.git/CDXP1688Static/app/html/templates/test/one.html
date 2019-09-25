@@ -1,0 +1,27 @@
+<div ng-controller="TestOneCtrl">
+  <div class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <select class="form-control" ng-model="selectDate.year" ng-change="changeYear();">
+          <option ng-repeat="y in dateInfo.years" ng-value="y" ng-bind="y"></option>
+        </select>
+        <span class="input-group-addon">年</span>
+      </div>
+      <div class="input-group">
+        <select class="form-control" ng-model="selectDate.month" ng-change="changeMonth();">
+          <option ng-repeat="m in dateInfo.months" ng-value="m" ng-bind="m"></option>
+        </select>
+        <span class="input-group-addon">月</span>
+      </div>
+      <div class="input-group">
+        <select class="form-control" ng-model="selectDate.day">
+          <option ng-repeat="d in dateInfo.days" ng-value="d" ng-bind="d"></option>
+        </select>
+        <span class="input-group-addon">日</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <span ng-bind="selectDate.toString()"></span>
+  </div>
+</div>

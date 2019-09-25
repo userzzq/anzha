@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbProvinceDAO">
+    
+  <select id="queryAll" resultType="TbProvince">
+    select pid,province,info,lastupdate from TbProvince
+  </select>
+  
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbProvince
+  </select>
+  
+  <select id="queryByKey" parameterType="TbProvince" resultType="TbProvince">
+    select pid,province,info,lastupdate from TbProvince 
+    where pid=#{pid}
+  </select>
+  
+  <insert id="add" parameterType="TbProvince">
+    insert into TbProvince(province,info,lastupdate)
+    values(#{province},#{info},#{lastupdate})
+  </insert>
+  
+  <update id="update" parameterType="TbProvince">
+    update TbProvince set province=#{province},info=#{info},lastupdate=#{lastupdate}
+    where pid=#{pid}
+  </update>
+  
+  <delete id="delete" parameterType="TbProvince" >
+    delete from TbProvince
+    where pid=#{pid}
+  </delete>
+  
+</mapper>

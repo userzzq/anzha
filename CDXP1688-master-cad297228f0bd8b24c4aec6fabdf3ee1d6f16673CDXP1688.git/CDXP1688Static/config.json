@@ -1,0 +1,35 @@
+{
+  "common": {
+    "nodemodules": "node_modules/",
+    "lib": "lib/",
+    "libhuhuiyu": "lib/huhuiyu/"
+  },
+  "app": {
+    "src": "app/",
+    "dist": "dist/app/",
+    "js": "app/js/",
+    "css": "app/css/",
+    "html": "app/html/",
+    "templates": "app/html/templates/",
+    "images": "app/images/",
+    "distjs": "dist/app/js/",
+    "distcss": "dist/app/css/",
+    "disttemplates": "dist/app/templates/",
+    "distimages": "dist/app/images/",
+    "distfonts": "dist/app/fonts/"
+  },
+  "manage": {
+    "src": "manage/",
+    "dist": "dist/manage/",
+    "js": "manage/js/",
+    "css": "manage/css/",
+    "html": "manage/html/",
+    "templates": "manage/html/templates/",
+    "images": "manage/images/",
+    "distjs": "dist/manage/js/",
+    "distcss": "dist/manage/css/",
+    "disttemplates": "dist/manage/templates/",
+    "distimages": "dist/manage/images/",
+    "distfonts": "dist/manage/fonts/"
+  }
+}

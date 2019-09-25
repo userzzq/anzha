@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbFixOrderDetailDAO">
+
+  <select id="queryByUfid" resultType="TbFixOrderDetail" parameterType="TbUserFixInfo">
+    select fodid,ufoid,detail,price,lastupdate from TbFixOrderDetail
+    where ufoid=(select ufoid from TbUserFixOrder where ufid=#{ufid})
+    limit 1
+  </select>
+
+  <select id="querybyUfoid" resultType="TbFixOrderDetail" parameterType="TbFixOrderDetail">
+    select fodid,ufoid,detail,price,lastupdate from TbFixOrderDetail
+    where ufoid=#{ufoid}
+    limit 1
+  </select>
+
+  <select id="queryAll" resultType="TbFixOrderDetail">
+    select fodid,ufoid,detail,price,lastupdate from TbFixOrderDetail
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbFixOrderDetail
+  </select>
+
+  <select id="queryByKey" parameterType="TbFixOrderDetail" resultType="TbFixOrderDetail">
+    select fodid,ufoid,detail,price,lastupdate from TbFixOrderDetail
+    where fodid=#{fodid}
+  </select>
+
+  <insert id="add" parameterType="TbFixOrderDetail">
+    insert into TbFixOrderDetail(ufoid,detail,price)
+    values(#{ufoid},#{detail},#{price})
+  </insert>
+
+  <update id="update" parameterType="TbFixOrderDetail">
+    update TbFixOrderDetail set ufoid=#{ufoid},detail=#{detail},price=#{price}
+    where fodid=#{fodid}
+  </update>
+
+  <delete id="delete" parameterType="TbFixOrderDetail">
+    delete from TbFixOrderDetail
+    where fodid=#{fodid}
+  </delete>
+
+  <select id="queryWorkerTotal" resultType="java.math.BigDecimal" parameterType="TbPayRecode">
+    select sum(price) from TbFixOrderDetail
+    where ufoid in(
+    select ufoid from TbUserFixOrder
+    where ufid in (
+    select ufid from TbUserFixInfo
+    where status = 99) and wid = #{wid}
+    )
+  </select>
+
+</mapper>

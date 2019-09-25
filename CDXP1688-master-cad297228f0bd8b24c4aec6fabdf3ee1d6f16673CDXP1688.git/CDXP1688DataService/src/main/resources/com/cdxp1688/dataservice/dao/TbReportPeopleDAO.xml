@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbReportPeopleDAO">
+
+  <select id="queryByWrid" resultType="TbReportPeople" parameterType="TbWorkerReport">
+    select p.rpid,p.wrid,p.rtid,p.username,p.phone,p.lastupdate,t.typeName 'type.typeName' from TbReportPeople p
+    left join TbReporterType t on p.rtid=t.rtid
+    where wrid=#{wrid}
+  </select>
+
+  <select id="queryAll" resultType="TbReportPeople">
+    select rpid,wrid,rtid,username,phone,lastupdate from TbReportPeople
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbReportPeople
+  </select>
+
+  <select id="queryByKey" parameterType="TbReportPeople" resultType="TbReportPeople">
+    select rpid,wrid,rtid,username,phone,lastupdate from TbReportPeople
+    where rpid=#{rpid}
+  </select>
+
+  <insert id="add" parameterType="TbReportPeople">
+    insert into TbReportPeople(wrid,rtid,username,phone)
+    values(#{wrid},#{rtid},#{username},#{phone})
+  </insert>
+
+  <update id="update" parameterType="TbReportPeople">
+    update TbReportPeople set wrid=#{wrid},rtid=#{rtid},username=#{username},phone=#{phone},lastupdate=#{lastupdate}
+    where rpid=#{rpid}
+  </update>
+
+  <delete id="delete" parameterType="TbReportPeople">
+    delete from TbReportPeople
+    where rpid=#{rpid}
+  </delete>
+
+</mapper>

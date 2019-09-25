@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbWorkerDAO">
+
+  <select id="queryOnline" resultType="TbWorker" parameterType="TbWorker">
+    select w.wid,w.wtid,w.cid,w.address,w.phone,w.name,w.password='*****',w.recommend,w.isEnable,w.inWork,w.lastupdate,t.typeName 'type.typeName'
+    from TbWorker w
+    left join TbWorkerType t on w.wtid=t.wtid
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过isEnable过滤 -->
+      <if test="isEnable=='y'.toString() || isEnable=='n'.toString()">
+        and w.isEnable=#{isEnable}
+      </if>
+      <!-- 通过isEnable过滤 -->
+      <if test="inWork=='y'.toString() || inWork=='n'.toString()">
+        and w.inWork=#{inWork}
+      </if>
+    </trim>
+  </select>
+
+  <select id="queryAll" resultType="TbWorker" parameterType="TbWorker">
+    select w.wid,w.wtid,w.cid,w.address,w.phone,w.name,w.password='*****',w.recommend,w.isEnable,w.inWork,w.lastupdate,t.typeName 'type.typeName'
+    from TbWorker w
+    left join TbWorkerType t on w.wtid=t.wtid
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过isEnable过滤 -->
+      <if test="isEnable=='y'.toString() || isEnable=='n'.toString()">
+        and w.isEnable=#{isEnable}
+      </if>
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and w.phone like #{phone}
+      </if>
+      <!-- 通过name过滤 -->
+      <if test="name!=null and name!=''">
+        and w.name like #{name}
+      </if>
+    </trim>
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int" parameterType="TbWorker">
+    select count(*) from TbWorker
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过isEnable过滤 -->
+      <if test="isEnable=='y'.toString() || isEnable=='n'.toString()">
+        and isEnable=#{isEnable}
+      </if>
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and phone like #{phone}
+      </if>
+      <!-- 通过name过滤 -->
+      <if test="name!=null and name!=''">
+        and name like #{name}
+      </if>
+    </trim>
+  </select>
+
+  <select id="queryByKey" parameterType="TbWorker" resultType="TbWorker">
+    select wid,wtid,cid,address,phone,password,name,recommend,isEnable,inWork,lastupdate from TbWorker
+    where wid=#{wid}
+  </select>
+
+  <update id="updateInWork" parameterType="TbWorker">
+    update TbWorker set inWork=#{inWork} where wid=#{wid}
+  </update>
+
+  <update id="updateEnable" parameterType="TbWorker">
+    update TbWorker set isEnable=#{isEnable} where wid=#{wid}
+  </update>
+
+  <select id="queryByPhone" parameterType="TbWorker" resultType="TbWorker">
+    select wid,wtid,cid,address,phone,password,name,recommend,isEnable,lastupdate from TbWorker
+    where phone=#{phone}
+  </select>
+
+  <insert id="add" parameterType="TbWorker">
+    insert into TbWorker(wtid,cid,address,phone,password,name)
+    values(#{wtid},#{cid},#{address},#{phone},#{password},#{name})
+  </insert>
+
+  <update id="update" parameterType="TbWorker">
+    update TbWorker set wtid=#{wtid},cid=#{cid},address=#{address},phone=#{phone},name=${name},password=#{password},recommend=#{recommend},isEnable=#{isEnable},lastupdate=#{lastupdate}
+    where wid=#{wid}
+  </update>
+
+  <delete id="delete" parameterType="TbWorker">
+    delete from TbWorker
+    where wid=#{wid}
+  </delete>
+
+  <update id="modifyPwd" parameterType="TbWorker">
+    update TbWorker set password=#{password}
+    where wid=#{wid}
+  </update>
+
+</mapper>

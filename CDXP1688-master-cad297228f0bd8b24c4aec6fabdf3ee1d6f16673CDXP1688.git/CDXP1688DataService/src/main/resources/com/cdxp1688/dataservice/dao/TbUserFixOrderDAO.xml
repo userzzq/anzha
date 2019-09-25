@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbUserFixOrderDAO">
+
+  <select id="queryByWorkerFinish" resultType="TbUserFixOrder" parameterType="TbUserFixOrder">
+    select o.ufoid,o.ufid,o.wid,o.info,o.lastupdate
+    ,i.info 'fixinfo.info',i.address 'fixinfo.address',i.addressInfo 'fixinfo.addressInfo'
+    ,i.lat 'fixinfo.lat',i.lng 'fixinfo.lng'
+    ,i.phone 'fixinfo.phone',i.fixtype 'fixinfo.fixtype',i.status 'fixinfo.status'
+    ,u.name
+    'fixinfo.user.name'
+    ,(select sum(price) from
+    TbFixOrderDetail
+    where ufoid=o.ufoid) 'price'
+    from TbUserFixOrder o
+    inner join TbUserFixInfo i on
+    o.ufid=i.ufid
+    inner join TbUser u on i.uid=u.uid
+    where o.wid=#{wid} and i.status in ('12','99')
+    order by i.status,o.lastupdate desc
+  </select>
+
+  <select id="queryByWorkerFinish_COUNT" resultType="int" parameterType="TbUserFixOrder">
+    select count(o.ufoid) from TbUserFixOrder o
+    inner join TbUserFixInfo i on o.ufid=i.ufid
+    inner join TbUser u on i.uid=u.uid
+    where o.wid=#{wid} and i.status in ('12','99')
+  </select>
+
+  <select id="queryByWorker" resultType="TbUserFixOrder" parameterType="TbUserFixOrder">
+    select o.ufoid,o.ufid,o.wid,o.info,o.lastupdate
+    ,i.info 'fixinfo.info',i.address 'fixinfo.address',i.addressInfo 'fixinfo.addressInfo'
+    ,i.lat 'fixinfo.lat',i.lng 'fixinfo.lng'
+    ,i.phone 'fixinfo.phone',i.fixtype 'fixinfo.fixtype',i.status 'fixinfo.status'
+    ,u.name
+    'fixinfo.user.name'
+    ,(select sum(price) from TbFixOrderDetail
+    where ufoid=o.ufoid) 'price'
+    from TbUserFixOrder o
+    inner join TbUserFixInfo i on
+    o.ufid=i.ufid
+    inner join TbUser u on i.uid=u.uid
+    where o.wid=#{wid} and i.status not in ('12','99')
+    order by i.status,o.lastupdate desc
+  </select>
+
+  <select id="queryByWorker_COUNT" resultType="int" parameterType="TbUserFixOrder">
+    select count(o.ufoid) from TbUserFixOrder o
+    inner join TbUserFixInfo i on o.ufid=i.ufid
+    inner join TbUser u on i.uid=u.uid
+    where o.wid=#{wid} and i.status not in ('12','99')
+  </select>
+
+  <select id="queryAll" resultType="TbUserFixOrder">
+    select ufoid,ufid,wid,info,lastupdate from TbUserFixOrder
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbUserFixOrder
+  </select>
+
+  <select id="queryByKey" parameterType="TbUserFixOrder" resultType="TbUserFixOrder">
+    select ufoid,ufid,wid,info,lastupdate from TbUserFixOrder
+    where ufoid=#{ufoid}
+  </select>
+
+  <select id="queryByUfid" parameterType="TbUserFixOrder" resultType="TbUserFixOrder">
+    select o.ufoid,o.ufid,o.wid,o.info,o.lastupdate,w.name 'worker.name',w.phone 'worker.phone'
+    from TbUserFixOrder o
+    inner join TbWorker w on o.wid=w.wid
+    where o.ufid=#{ufid}
+    order by o.lastupdate desc limit 1
+  </select>
+
+  <insert id="add" parameterType="TbUserFixOrder">
+    insert into TbUserFixOrder(wid,ufid,info)
+    values(#{wid},#{ufid},#{info})
+  </insert>
+
+  <update id="update" parameterType="TbUserFixOrder">
+    update TbUserFixOrder set wid=#{wid},ufid=#{ufid},info=#{info}
+    where ufoid=#{ufoid}
+  </update>
+
+  <delete id="delete" parameterType="TbUserFixOrder">
+    delete from TbUserFixOrder
+    where ufoid=#{ufoid}
+  </delete>
+
+  <select id="queryDetailByKey" parameterType="TbUserFixOrder" resultType="TbUserFixOrder">
+    select o.ufoid,o.ufid,o.wid,o.info,o.lastupdate
+    ,w.name 'worker.name',w.phone 'worker.phone'
+    ,i.info 'fixinfo.info',i.address 'fixinfo.address',i.addressInfo 'fixinfo.addressInfo'
+    ,i.lat 'fixinfo.lat',i.lng 'fixinfo.lng'
+    ,i.phone 'fixinfo.phone',i.fixtype 'fixinfo.fixtype',i.status 'fixinfo.status'
+    ,u.name
+    'fixinfo.user.name'
+    ,(select sum(price) from TbFixOrderDetail where ufoid=#{ufoid}) 'price'
+    from TbUserFixOrder o
+    left join TbWorker w on o.wid=w.wid
+    inner join TbUserFixInfo i on o.ufid=i.ufid
+    inner join TbUser u on i.uid=u.uid
+    where o.ufoid=#{ufoid}
+  </select>
+
+  <select id="queryDetailByWorkerKey" parameterType="TbUserFixOrder" resultType="TbUserFixOrder">
+    select o.ufoid,o.ufid,o.wid,o.info,o.lastupdate
+    ,i.info 'fixinfo.info',i.address 'fixinfo.address',i.addressInfo 'fixinfo.addressInfo'
+    ,i.lat 'fixinfo.lat',i.lng 'fixinfo.lng'
+    ,i.phone 'fixinfo.phone',i.fixtype 'fixinfo.fixtype',i.status 'fixinfo.status'
+    ,u.name
+    'fixinfo.user.name'
+    ,(select sum(price) from
+    TbFixOrderDetail where ufoid=#{ufoid}) 'price'
+    from TbUserFixOrder o
+    inner join TbWorker w on o.wid=w.wid
+    inner join TbUserFixInfo i on o.ufid=i.ufid
+    inner join TbUser u on i.uid=u.uid
+    where o.ufoid=#{ufoid} and o.wid=#{wid}
+  </select>
+
+</mapper>

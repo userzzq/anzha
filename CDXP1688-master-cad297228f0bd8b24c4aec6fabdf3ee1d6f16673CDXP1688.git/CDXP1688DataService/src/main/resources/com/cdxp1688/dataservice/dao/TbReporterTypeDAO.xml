@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbReporterTypeDAO">
+    
+  <select id="queryAll" resultType="TbReporterType">
+    select rtid,typeName,typeInfo,isEnable,lastupdate from TbReporterType
+  </select>
+  
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbReporterType
+  </select>
+  
+  <select id="queryByKey" parameterType="TbReporterType" resultType="TbReporterType">
+    select rtid,typeName,typeInfo,isEnable,lastupdate from TbReporterType 
+    where rtid=#{rtid}
+  </select>
+  
+  <insert id="add" parameterType="TbReporterType">
+    insert into TbReporterType(typeName,typeInfo,isEnable,lastupdate)
+    values(#{typeName},#{typeInfo},#{isEnable},#{lastupdate})
+  </insert>
+  
+  <update id="update" parameterType="TbReporterType">
+    update TbReporterType set typeName=#{typeName},typeInfo=#{typeInfo},isEnable=#{isEnable},lastupdate=#{lastupdate}
+    where rtid=#{rtid}
+  </update>
+  
+  <delete id="delete" parameterType="TbReporterType" >
+    delete from TbReporterType
+    where rtid=#{rtid}
+  </delete>
+  
+</mapper>

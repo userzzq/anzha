@@ -1,0 +1,19 @@
+.worker {
+  background-image:url('../images/1.jpg');
+  background-size:cover;
+}
+
+.worker .table td {
+  vertical-align: middle;
+}
+
+.worker .bg-color{
+  background:rgb(43, 46, 44);
+}
+.worker .sfgl-color{
+  color: #ffffff;
+}
+.worker .zt-color{
+  background-color:  rgb(213, 245, 255);
+  color: #000000;
+}

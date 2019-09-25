@@ -1,0 +1,24 @@
+.test-flex {
+  background-color: #aaaaaa;
+}
+
+.test-flex .top {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.test-flex .bottom {
+  z-index: 10;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.test-flex .test {
+  height: 100vh;
+}

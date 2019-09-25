@@ -1,0 +1,101 @@
+/*顶级div划分内部div左右*/
+.worker-grxx{
+  background: rgb(233, 233, 233);
+}
+
+.worker-grxx  .top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+
+  z-index: 100;
+}
+
+.worker-grxx  .top-bar .content {
+  padding: 1.5rem;
+}
+
+.worker-grxx  .bottom-menus {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.worker-grxx  .menu {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.worker-grxx  .include-page {
+  width: 100%;
+}
+
+.worker-grxx  .include-page.ng-enter {
+  position: absolute;
+  animation: move-in 0.5s;
+}
+
+.worker-grxx  .include-page.ng-leave {
+  position: absolute;
+  animation: move-out 0.5s;
+}
+
+@keyframes move-in {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+
+@keyframes move-out {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
+.worker-grxx  .yellow {
+  background: #e72d20;
+  color: #ffffff;
+}
+
+.worker-grxx  .baise {
+  background: #e0dcdc;
+  color: #ffffff;
+}
+
+.worker-grxx  .arrow:after {
+  content: ' ';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  -webkit-transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+  transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+}
+
+.worker-grxx  .div-zy {
+  display: flex;
+}
+
+.worker-grxx  .div-zy1 {
+  flex: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.worker-grxx  .div-zy2 {
+  flex: 80%;
+}

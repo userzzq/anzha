@@ -1,0 +1,19 @@
+<div ng-controller="MainCtrl" class="main h100">
+  <div class="text-right bg-color userinfo">
+    <span class="yhxx-color" ng-click="xiugaimm();" style="cursor: pointer;">欢迎：<span ng-bind="user.nickname"></span>(<span ng-bind="user.username"></span>)</span>
+    <span class="btn btn-info btn-sm" ng-click="logout();"><i class="iconfont">&#xe671;</i>安全退出</span>
+  </div>
+  <div class="main-div" fixed-to-next>
+    <div class="main-menus bg-info">
+      <div ng-repeat="m in menus">
+        <span class="btn" ng-class="{true:' btn-color',false:'btn-color2'}[selectMenu.page==m.page]" ng-click="changeMenu(m);">
+         <i class="iconfont" ng-bind-html="m.icon"></i> <span ng-bind="m.text"></span>
+        </span>
+      </div>
+    </div>
+    <div class="main-content">
+      <div ng-include="incPage" class="h100"></div>
+    </div>
+  </div>
+  <div class="div-fixed"></div>
+</div>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>壹路巴巴服务中心</title>
+</head>
+
+<body>
+  <h1>
+    <span id="spBrowser"></span>
+    支付测试页面
+    <button id="btnPay">测试支付</button>
+    <button id="btnWxPay">微信测试支付</button>
+  </h1>
+
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
+  <script>
+    function isWeiXin() {
+      var ua = window.navigator.userAgent.toLowerCase();
+      if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    document.getElementById('spBrowser').innerHTML = (window.navigator.userAgent.toLowerCase() + '===>' + isWeiXin());
+
+
+    document.getElementById('btnPay').addEventListener('click', function () {
+      axios
+        .get('https://cdxp1688.com/testpay/pay/testH5Pay')
+        .then(function (resp) {
+          console.log(resp.data);
+          if (resp.data.success) {
+            location = resp.data.message;
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    });
+
+    document.getElementById('btnWxPay').addEventListener('click', function () {
+      location = 'https://cdxp1688.com/testpay/pay/openid';
+    });
+  </script>
+</body>
+
+</html>

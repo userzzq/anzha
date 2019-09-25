@@ -1,0 +1,54 @@
+.worker-index .tp {
+  width: 100%;
+  height: 20rem;
+
+}
+
+.worker-index img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.worker-index .myinput {
+  border: 0rem;
+  background-color: transparent;
+  border-bottom: 0.3rem solid #e72d20;
+  outline: none;
+  width: 17rem;
+}
+
+
+.worker-index .zuoyou {
+  display: flex;
+}
+
+
+.worker-index .zuoyou3 {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e72d20;
+}
+
+.worker-index .qzjz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.worker-index .aqdl-btn {
+  background-color: #ffffff;
+  color: #e72d20;
+  border:0.1rem #e72d20 solid;
+  padding: 0.5rem 6rem 0.5rem 6rem;
+}
+.worker-index i{
+  color: #e72d20;
+}
+
+.worker-index .inputdiv {
+  font-size: 0;
+}

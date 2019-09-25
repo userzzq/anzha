@@ -1,0 +1,29 @@
+.worker-zfmima{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 3rem 0rem 0rem 0rem;
+}
+.worker-zfmima .re input{
+  border: 0.2rem #000000 solid;
+  width: 3rem;
+  height: 3.5rem;
+  font-size: 3rem;
+  text-align: center;
+}
+.worker-zfmima .wenzhi{
+  padding: 0rem 0rem 1rem 0rem;
+}
+.worker-zfmima .qxal{
+ padding: 0.8rem 3rem 0.8rem 3rem;
+ border: 0.2rem #e72d20 solid;
+ color: #e72d20;
+}
+.worker-zfmima .qdal{
+  padding: 0.8rem 3rem 0.8rem 3rem;
+  background: #e72d20;
+  color: #ffffff;
+}
+.worker-zfmima .btn-pd{
+  padding: 4rem 0rem 0rem 0rem;
+}

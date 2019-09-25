@@ -1,0 +1,51 @@
+<div ng-controller="LiKeXiaDanCtrl" class="user-likexiadan">
+  <div class="div-head">
+    <div class="pd10 alpha-div" ng-click="topage('/user/index');">
+      <span class="h3 write">
+        <i class="pd10 glyphicon glyphicon-chevron-left"></i>
+        立刻下单
+      </span>
+    </div>
+  </div>
+  <div class="likexiadan-form">
+    <div class="panel-body">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">需求</span>
+          <textarea class="form-control textarea" ng-model="tbUserFixInfo.info"></textarea>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">地址</span>
+          <input class="form-control" ng-model="tbUserFixInfo.address" readonly>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">联系电话</span>
+          <input class="form-control" ng-model="tbUserFixInfo.phone">
+        </div>
+
+        <div class="panel panel-default">
+          <div>
+            <label class="wz">上传现场图片</label>
+            <input class="pic-btn hide" type="file">
+            <div>
+              <!-- capture="camera" 启动相机 -->
+              <input style="width: 0px;height: 0px;" type="file" accept="image/*" onchange="angular.element(this).scope().changeFile(this);">
+              <img ng-src="{{upimg}}" class="img-responsive" ng-click="selectFile($event);">
+            </div>
+            <!-- <div class="wz1">可上传3张</div> -->
+          </div>
+        </div>
+
+        <div class="wz text-center">
+          <div style="color: rgb(255, 166, 0)">*温馨提示</div>
+          <div>本次服务费的上门费为30元</div>
+          <div>如已开始维修则不需要上门服务费</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer buttons text-center" fixed-bottom>
+    <span class="btn button" ng-click="save();">立刻下单</span>
+  </div>
+</div>

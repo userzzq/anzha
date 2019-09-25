@@ -1,0 +1,34 @@
+<div class="user-main h100" ng-controller="UserMainCtrl">
+    <div class="div-main">
+      <div class="panel">
+        <div class="panel-heading">
+          <div class="panel-title text-center" style="font-size: 2.5rem;">登录</div>
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="iconfont">&#xe604;</i></span>
+              <input type="text" ng-model="tbUser.phone" class="form-control" placeholder="请输入手机号码">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="iconfont">&#xe86b;</i></span>
+              <input type="password" ng-model="tbUser.password" class="form-control" placeholder="请输入登录密码">
+            </div>
+          </div>
+          <div class="text-center btn-pd">
+            <span class="btn btn-default aqdl-btn" ng-click="login();"><i class="iconfont">&#xe671;</i>安全登录</span>
+          </div>
+        </div>
+        <div class="login-form">
+          <div class="myflex">
+            <div class="pd5">
+              <span class="ztys btn btn-default aqdl-btn1" ng-click="zhuce();">注册账号</span>
+            </div>
+            <div class="pd5">
+              <span class="ztys btn btn-default aqdl-btn1" ng-click="wjpwd();">忘记密码</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div ng-controller="UserWeiXiuDingDanCtrl" class="user-weixiudingdan">
+  <div class="div-head" fixed-top>
+    <div class="pd10 alpha-div" ng-click="topage('/user/wode');">
+      <span class="h3 write">
+        <i class="pd10 glyphicon glyphicon-chevron-left"></i>
+        服务订单
+      </span>
+    </div>
+    <div class="bianxian fx">
+      <div>
+        <span class="button" style="font-size: 2rem;" ng-click="queryProgress();">未完成</span>
+      </div>
+      <div>
+        <span class="button" style="font-size: 2rem;" ng-click="queryFinish();">已完成</sapn>
+      </div>
+      <div>
+        <span class="button" style="font-size: 2rem;" ng-click="requery();">刷新</sapn>
+      </div>
+    </div>
+  </div>
+  <div class="pd10">
+    <div ng-repeat="b in list">
+      <div class="jz  bianxian1">
+        <div class="zuoyou">
+          <div class="zuoyou2">
+            <div class="bj"><b>服务订单</b></div>
+            <div class="bj">服务类型：
+              <span ng-if="b.fixtype==10">我要修</span>
+              <span ng-if="b.fixtype==11">我要洗</span>
+              <span ng-if="b.fixtype==12">我要装</span>
+            </div>
+            <div class="bj">详细：
+              <span ng-bind="b.info"></span>
+            </div>
+            <div class="bj" ng-if="b.price>0">
+              <span>维修价格:</span>
+              <span class="wz">￥</span>
+              <span class="wz" ng-bind="b.price"></span>
+            </div>
+            <div class="bj" ng-if="!b.price">
+              <span>维修价格:</span>
+              <span class="wz">等待报价</span>
+            </div>
+
+            <div class="bj">服务状态:
+              <span class="wz">
+                <span ng-if="b.status==10">已经下单</span>
+                <span ng-if="b.status==11">已经接单</span>
+                <span ng-if="b.status==12">已经取消</span>
+                <span ng-if="b.status==13">已经定价</span>
+                <span ng-if="b.status==14">维修完成</span>
+                <span ng-if="b.status==15">已经支付</span>
+                <span ng-if="b.status==99">订单完成</span>
+              </span>
+            </div>
+            <div class="bj">地址:
+              <span ng-bind="b.address"></span>
+            </div>
+            <div class="bj zy">
+              <div class="zy1">
+                时间：
+                <span show-time="{{b.lastupdate}}" show-time-format="y-M-d h:m:s"></span>
+              </div>
+              <div>
+                <span ng-if="b.status==10 || (b.status==11 && !b.price)" ng-click="cance(b);" class="span-color button">取消订单</span>
+              </div>
+              <div>
+                <span ng-if="b.price>0 && b.status==11" ng-click="price(b);" class="span-color button">接受价格</span>
+              </div>
+              <div>
+                <span ng-if="b.status==14" ng-click="pay(b);" class="span-color button">确定支付</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center;" ng-click="ckgd();" ng-if="page.pageNumber < page.pageCount">
+      ====点击加载更多====
+    </div>
+  </div>
+</div>

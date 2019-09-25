@@ -1,0 +1,131 @@
+<div ng-controller="WorkerReportCtrl" class="workerReport h100">
+  <!-- excel导出表单 -->
+  <form id="report-excel-form" method="POST" action="{{excelAction}}" target="_blank" style="display: none;">
+    <input type="text" name="tbWorkerReport.worker.name" value="{{tbWorkerReport.worker.name}}">
+    <input type="text" name="tbWorkerReport.worker.phone" value="{{tbWorkerReport.worker.phone}}">
+    <input type="text" name="tbWorkerReport.username" value="{{tbWorkerReport.username}}">
+    <input type="text" name="tbWorkerReport.phone" value="{{tbWorkerReport.phone}}">
+  </form>
+  <!-- excel导出表单结束 -->
+
+  <div class="h100">
+    <div class="panel panel-default">
+      <div class="panel-heading bg-color">
+        <h3 class="panel-title text-center h1 bbxx-color">报备信息管理</h3>
+      </div>
+
+      <div class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon span-color">
+              报备师傅姓名:
+            </span>
+            <input type="text" class="form-control" style="width: 15rem;" ng-model="tbWorkerReport.worker.name">
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon span-color">
+              报备师傅电话:
+            </span>
+            <input type="text" class="form-control" style="width: 15rem;" ng-model="tbWorkerReport.worker.phone">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon span-color">
+              业主姓名:
+            </span>
+            <input type="text" class="form-control" style="width: 15rem;" ng-model="tbWorkerReport.username">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon span-color">
+              业主电话:
+            </span>
+            <input type="text" class="form-control" style="width: 15rem;" ng-model="tbWorkerReport.phone">
+          </div>
+        </div>
+        <span class="btn btn-default" title="搜索" ng-click="query();">
+          <i class="iconfont">&#xe62e;</i>
+        </span>
+        <span class="btn btn-default" ng-click="exportExcel();">导出excel</span>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr class="bg-info">
+              <th>序号</th>
+              <th>报备师傅</th>
+              <th>报备师傅电话</th>
+              <th>详细地址</th>
+              <th>业主姓名</th>
+              <th>联系方式</th>
+              <th>面积详情</th>
+              <th>开工日期</th>
+              <th>装修公司</th>
+              <th>最后修改时间</th>
+              <td>操作</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="d in list">
+              <td>
+                <span ng-bind="$index+1"></span>
+              </td>
+              <td>
+                <span ng-bind="d.worker.name"></span>
+              </td>
+              <td>
+                <span ng-bind="d.worker.phone"></span>
+              </td>
+              <td>
+                <span ng-bind="d.address"></span>
+              </td>
+              <td>
+                <span ng-bind="d.username"></span>
+              </td>
+              <td>
+                <span ng-bind="d.phone"></span>
+              </td>
+              <td>
+                <span ng-bind="d.areainfo"></span>
+              </td>
+              <td>
+                <span show-time="{{d.opendate}}"></span>
+              </td>
+              <td>
+                <span ng-bind="d.decorate"></span>
+              </td>
+              <td>
+                <span show-time="{{d.lastupdate}}" show-time-format="y-M-d h:m:s"></span>
+              </td>
+              <td>
+                <span class="btn btn-default" ng-click="showPeople(d);"><i class="iconfont">&#xe78f;</i>显示相关人员信息</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      <nav class="text-center">
+        <ul class="pagination">
+          <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+            <a href="javascript:void(0);" ng-click="toPage(1);">首页</a>
+          </li>
+          <li ng-class="{true:'disabled'}[page.pageNumber==1]">
+            <a href="javascript:void(0);" ng-click="toPage(page.pageNumber-1);">上一页</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">
+              {{page.total}}/{{page.pageNumber}}/{{page.pageCount}}
+            </a>
+          </li>
+          <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+            <a href="javascript:void(0);" ng-click="toPage(page.pageNumber+1);">下一页</a>
+          </li>
+          <li ng-class="{true:'disabled'}[page.pageNumber==page.pageCount]">
+            <a href="javascript:void(0);" ng-click="toPage(page.pageCount);">尾页</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

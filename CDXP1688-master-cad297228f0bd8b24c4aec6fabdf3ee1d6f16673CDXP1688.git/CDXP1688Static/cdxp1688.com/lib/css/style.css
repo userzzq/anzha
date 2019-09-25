@@ -1,0 +1,712 @@
+@charset "utf-8";
+/* CSS Document */
+html {
+  font-size: 625%;
+}
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei UI',
+    'Microsoft YaHei', SimHei, '\5B8B\4F53', simsun, sans-serif;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Logo {
+  margin: 150px 0 0 8px;
+  margin: 0.15rem 0 0 0.08rem;
+  width: 300px;
+  width: 1.02rem;
+  height: 30px;
+  height: 0.3rem;
+  display: inline-block;
+  background: url(../images/logo2.png) no-repeat 0 0;
+  background-size: contain;
+}
+.banner {
+  margin-top: 30px;
+  margin-top: 0.3rem;
+  width: 100%;
+  overflow: hidden;
+}
+.banner_content {
+  height: 220px;
+  color: #fff;
+  font-size: 12px;
+  padding-top: 54px;
+  overflow-y: hidden;
+}
+
+.banner_l_word {
+  padding-right: 0;
+}
+.banner_l_word h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.banner_content .banner_r_img {
+  padding: 0;
+}
+
+/* 轮播 */
+
+/* 结束轮播 */
+
+/*产品介绍*/
+.main_title {
+  text-align: center;
+}
+.main_title h1 {
+  font-weight: 100;
+}
+.product_intr {
+  margin: 20px auto;
+}
+
+.product_item img.center-block {
+  margin: 10px auto;
+}
+
+.weixin_pay .product_info {
+  border: 1px solid #00b700;
+}
+.product_info {
+  border-radius: 5px;
+  margin: 5px;
+  min-height: 140px;
+}
+.product_info h5 {
+  margin: 0 0 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  background: #00b700;
+  color: #fff;
+  font-weight: bold;
+}
+.product_info p {
+  margin-right: 5px;
+}
+.product_intr .row,
+.product_intr .col-sm-6,
+.product_intr .col-lg-6 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.product_info_icon {
+  width: 70px;
+  height: 70px;
+  margin: 5px 10px 10px 10px;
+  background: url(../images/product_info_icon.png) no-repeat;
+}
+.weixin_pay .product_info_icon.icon1 {
+  background-position: 0 0;
+}
+.weixin_pay .product_info_icon.icon2 {
+  background-position: -70px 0;
+}
+.weixin_pay .product_info_icon.icon3 {
+  background-position: 0 -70px;
+}
+.weixin_pay .product_info_icon.icon4 {
+  background-position: -70px -70px;
+}
+
+.alipay .product_info {
+  border: 1px solid #00aaee;
+}
+.alipay .product_info h5 {
+  background: #00aaee;
+}
+.alipay .product_info_icon.icon1 {
+  background-position: -140px 0;
+}
+.alipay .product_info_icon.icon2 {
+  background-position: -210px 0;
+}
+.alipay .product_info_icon.icon3 {
+  background-position: -140px -70px;
+}
+.alipay .product_info_icon.icon4 {
+  background-position: -210px -70px;
+}
+
+.no_pad {
+  padding: 0;
+}
+.no_mar {
+  margin: 0;
+}
+
+/*便捷支付*/
+.easy_pay {
+  padding: 20px 0;
+}
+.easy_pay_item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  max-width: 260px;
+  margin: 5px 5px 5px 5px;
+}
+.easy_pay_item h2 {
+  text-align: center;
+  font-weight: 100;
+}
+.easy_pay_item p {
+  padding: 0 10px 10px 10px;
+  color: #666;
+}
+.easy_pay_item img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/*优势*/
+.advantage {
+  padding: 10px 0;
+}
+.adv_item {
+  text-align: center;
+}
+.adv_item h2 {
+  font-weight: 800;
+  font-size: 16px;
+}
+.youshi_icon {
+  display: block;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  background: url(../images/youshi_icon_bg.png) no-repeat;
+  background-size: cover;
+}
+.youshi_icon.icon1 {
+  background-position: 0 0;
+}
+.youshi_icon.icon2 {
+  background-position: -120px 0;
+}
+.youshi_icon.icon3 {
+  background-position: -240px 0;
+}
+
+/*流程*/
+
+.process {
+  padding: 30px 0;
+  margin: 30px 0;
+  background: url(../images/prosessBg2.png) no-repeat;
+  background-size: contain;
+  background-position: center center !important;
+}
+.processItem {
+  width: 100%;
+  text-align: center;
+}
+.processItem p {
+  margin: 10px 0;
+  color: #666;
+}
+.processIcon {
+  display: block;
+  width: 160px;
+  height: 186px;
+  margin: 5px auto;
+  background: url(../images/flow_icon_bg.png) no-repeat;
+  padding-top: 124px;
+  color: #00a0e9;
+}
+.processIcon:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.processIcon.Icon1 {
+  background-position: 0 0;
+}
+.processIcon.Icon2 {
+  background-position: -160px 0;
+}
+.processIcon.Icon3 {
+  background-position: -320px 0;
+}
+.processIcon.Icon4 {
+  background-position: -480px 0;
+}
+.processIcon.Icon5 {
+  background-position: -640px 0;
+}
+.processIcon.Icon1:hover {
+  background-position: 0px -186px;
+}
+.processIcon.Icon2:hover {
+  background-position: -160px -186px;
+}
+.processIcon.Icon3:hover {
+  background-position: -320px -186px;
+}
+.processIcon.Icon4:hover {
+  background-position: -480px -186px;
+}
+.processIcon.Icon5:hover {
+  background-position: -640px -186px;
+}
+
+.flow {
+  background: #fafafa;
+  padding: 20px 0;
+}
+
+/*合作伙伴*/
+.hzhb {
+  padding: 0 0 10px 0;
+  padding: 0 0 0.1rem 0;
+  text-align: center;
+}
+.hzhbPic {
+  width: 140px;
+  height: 50px;
+  border: 1px solid #eee;
+  margin: 5px 0;
+}
+
+.footer {
+  background: #160300;
+  color: #fff;
+}
+.footer a {
+  color: #fff;
+}
+.contact {
+  margin: 10px auto;
+  margin: 0.1rem auto;
+}
+.copyRight {
+  padding: 0.1rem 0 0 0;
+  padding: 10px 0 0 0;
+}
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  height: 0.4rem;
+  width: 40px;
+  width: 0.4rem;
+  position: fixed;
+  bottom: 40px;
+  bottom: 0.4rem;
+  right: 10px;
+  right: 0.1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(200, 0, 0, 0.8)
+    url(http://www.txzfpay.com/images/cd-top-arrow.svg) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* 如果用户继续向下滚动,这个按钮的透明度会变得更低 */
+  opacity: 0.5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+
+#scene li {
+  color: #666;
+}
+.scene_item {
+  border: 1px solid #ccc;
+  text-align: center;
+  max-width: 224px;
+  margin: 10px auto;
+}
+.scene_item img {
+  margin: 0 auto;
+}
+.scene_item span {
+  margin: 0 auto 12px auto;
+}
+
+.contact_item {
+  background: #f5f5f5;
+  font-size: 12px;
+  text-align: center;
+  padding: 30px 0;
+  margin-bottom: 20px;
+}
+.contact_item_icon {
+  display: block;
+  width: 88px;
+  height: 88px;
+  margin: 0 auto;
+  background: url(../images/contact_bg.png) no-repeat;
+}
+.contact_item_icon.icon1 {
+  background-position: 0 0;
+}
+.contact_item_icon.icon2 {
+  background-position: -88px 0;
+}
+.contact_item_icon.icon3 {
+  background-position: -176px 0;
+}
+.contact_item_icon.icon4 {
+  background-position: -264px 0;
+}
+/*媒体查询*/
+@media (max-width: 767px) {
+  .cd-top {
+    right: 20px;
+    right: 0.2rem;
+    bottom: 20px;
+    bottom: 0.2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .banner_content {
+    height: 320px;
+  }
+
+  .banner_l_word h2 {
+    font-size: 40px;
+    font-weight: 100;
+  }
+  .banner_l_word {
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+
+/*PC主要样式*/
+@media (min-width: 992px) {
+  .banner {
+    margin-top: 0;
+  }
+  .banner_content {
+    padding-top: 160px;
+    height: 600px;
+    position: relative;
+  }
+  .banner_content .col-xs-7 {
+    width: 41.66666667% !important;
+  }
+  .banner_content .col-xs-5 {
+    width: 58.33333333% !important;
+  }
+  .banner_l_word h2 {
+    font-size: 40px;
+    font-weight: 100;
+  }
+  .banner_l_word {
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  /*
+	.owl-nav{display:block;position: absolute;top:50%!important;-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);}
+*/
+
+  .item {
+    width: 100%;
+  }
+  .Header {
+    height: 80px;
+    height: 0.8rem;
+  }
+  .Header,
+  #header {
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  }
+
+  .Logo {
+    background: url(../images/logo.png) no-repeat 0 0;
+    width: 150px;
+    height: 30px;
+    margin-top: 24px;
+  }
+  .menu_bg {
+    background-color: #f8f8f8 !important;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  .menu_bg .Logo {
+    background: url(../images/logo2.png) no-repeat 0 0;
+  }
+  .Header.navbar-default {
+    background: none;
+    border: none;
+  }
+  .Header .navbar-nav {
+    margin: 30px 0 0 0;
+    margin: 0.3rem 0 0 0;
+  }
+  .Header.navbar-default .navbar-nav > .active > a {
+    color: #fff;
+    background-color: transparent;
+  }
+  .Header.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    padding: 0 24px;
+    padding: 0 0.24rem;
+    margin: 0 5px;
+    margin: 0 0.05rem;
+    line-height: 22px;
+    line-height: 0.22rem;
+    text-indent: 4px;
+    text-indent: 0.04rem;
+  }
+  .Header.navbar-default .navbar-nav > li > a:focus,
+  .Header.navbar-default .navbar-nav > li > a:hover {
+    color: #eee;
+  }
+  .menu_bg.navbar-default .navbar-nav > .active > a {
+    color: #999;
+  }
+  .menu_bg.navbar-default .navbar-nav > li > a {
+    color: #999;
+    text-indent: 4px;
+    text-indent: 0.04rem;
+  }
+  .menu_bg.navbar-default .navbar-nav > li > a:focus,
+  .menu_bg.navbar-default .navbar-nav > li > a:hover {
+    color: #333;
+  }
+  .menuHome,
+  .menuProducts,
+  .menuAPI,
+  .menuAbout,
+  .menuContact {
+    background: url(../images/menuIcon.png) no-repeat;
+  }
+  .menu_bg .menuHome,
+  .menu_bg .menuProducts,
+  .menu_bg .menuAPI,
+  .menu_bg .menuAbout,
+  .menu_bg .menuContact {
+    background: url(../images/menuIcon2.png) no-repeat;
+  }
+  .menuProducts {
+    background-position: 0 -22px !important;
+    background-position: 0 -0.22rem !important;
+  }
+  .menuAPI {
+    background-position: 0 -44px !important;
+    background-position: 0 -0.44rem !important;
+  }
+  .menuAbout {
+    background-position: 0 -66px !important;
+    background-position: 0 -0.66rem !important;
+  }
+  .menuContact {
+    background-position: 0 -88px !important;
+    background-position: 0 -0.88rem !important;
+  }
+
+  .main_title p {
+    font-size: 16px;
+    color: #666;
+  }
+  /*便捷支付PC*/
+  .easy_pay {
+    padding: 20px 0 60px 0;
+  }
+  .easy_pay_item {
+    min-height: 310px;
+    max-width: 260px;
+    margin: 25px 5px 5px 5px;
+  }
+  .easy_pay_item h2 {
+    font-weight: 100;
+  }
+  .easy_pay_item p {
+    padding: 0 20px 30px 20px;
+    font-size: 16px;
+  }
+
+  .youshi_icon {
+    width: 180px;
+    height: 180px;
+  }
+  .youshi_icon.icon2 {
+    background-position: -180px 0;
+  }
+  .youshi_icon.icon3 {
+    background-position: -360px 0;
+  }
+  .adv_item p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  .advantage,
+  .advantage .main_title {
+    margin: 40px 0;
+  }
+
+  .process {
+    background: url(../images/prosessBg.png) no-repeat;
+    padding: 30px 0 100px 0;
+    padding: 0.3rem 0 1rem 0;
+  }
+  .process .bigTitle {
+    padding: 0 0 60px 0;
+    padding: 0 0 0.6rem 0;
+  }
+  .processItem {
+    width: 20%;
+    float: left;
+  }
+  .processItem p {
+    font-size: 16px;
+    font-size: 0.16rem;
+  }
+  .processWord {
+    font-size: 14px !important;
+    font-size: 0.14rem !important;
+    color: #999 !important;
+    margin: 0 30px !important;
+    margin: 0 0.3rem !important;
+  }
+
+  .bjzf {
+    padding: 10px 0 90px 0;
+    padding: 0.1rem 0 0.9rem 0;
+    height: 600px;
+    height: 6rem;
+  }
+  .bjzf .bigTitle,
+  .aboutUs .bigTitle {
+    padding: 80px 0 40px 0;
+    padding: 0.8rem 0 0.4rem 0;
+  }
+  .bjzfItem {
+    height: 330px;
+    height: 3.3rem;
+    padding: 40px 0;
+    padding: 0.4rem 0;
+    margin: 10px 0;
+    margin: 0.1rem 0;
+  }
+  .bjzfItem strong {
+    font-size: 30px;
+    font-size: 0.3rem;
+    margin: 20px 0;
+    margin: 0.2rem 0;
+    font-weight: 100;
+  }
+  .bjzfItem p {
+    margin: 0 30px;
+    margin: 0 0.3rem;
+    font-size: 16px;
+    font-size: 0.16rem;
+  }
+  .bjzfItemPic {
+    width: 100px;
+    width: 1rem;
+    height: 100px;
+    height: 1rem;
+  }
+  .bjzfItemPic.Pic1 {
+    background-position: 0 0;
+  }
+  .bjzfItemPic.Pic2 {
+    background-position: 0 -100px;
+    background-position: 0 -1rem;
+  }
+  .bjzfItemPic.Pic3 {
+    background-position: 0 -200px;
+    background-position: 0 -2rem;
+  }
+  .bjzfItemPic.Pic4 {
+    background-position: 0 -300px;
+    background-position: 0 -3rem;
+  }
+  .aboutUs {
+    padding: 0 0 30px 0;
+    padding: 0 0 0.3rem 0;
+  }
+  .aboutWord {
+    font-size: 16px;
+    font-size: 0.16rem;
+    line-height: 2;
+  }
+  .hzhb {
+    padding: 0 0 50px 0;
+    padding: 0 0 0.5rem 0;
+  }
+  .hzhbPic {
+    margin: 10px 0;
+    margin: 0.1rem 0;
+  }
+  .contact p {
+    font-size: 16px;
+    font-size: 0.16rem;
+    line-height: 2;
+    padding: 20px 0;
+    padding: 0.2rem 0;
+  }
+  .cd-top {
+    height: 60px;
+    height: 0.6rem;
+    width: 60px;
+    width: 0.6rem;
+    right: 30px;
+    right: 0.3rem;
+    bottom: 30px;
+    bottom: 0.3rem;
+  }
+
+  /*应用场景*/
+  .scene_item {
+    border: 1px solid #ccc;
+    text-align: center;
+    max-width: 224px;
+    margin: 10px 0;
+  }
+  .scene_item img {
+    margin: 0 auto 12px auto;
+  }
+  .scene_item span {
+    display: inline-block;
+    margin: 12px auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .contact_item {
+    font-size: 16px;
+  }
+}
+
+/*大屏幕样式*/
+@media (min-width: 1200px) {
+}

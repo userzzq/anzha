@@ -1,0 +1,54 @@
+<div ng-controller="workerJiedanCtrl" class="worker-jiedan h100">
+  <div class="top-bar yellow div-zt" fixed-top>
+    <div class="content">
+      <span class="arrow" ng-click="fanhui();"></span>
+      <span>接单</span>
+    </div>
+  </div>
+  <div class="main">
+    <div class="div-images">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="form-group">
+            <div>
+             <b>业主电话：</b> 
+              <span ng-bind="order.user.phone"></span>
+            </div>
+            <div>
+             <b>业主姓名：</b> 
+              <span ng-bind="order.user.name"></span>
+            </div>
+            <div>
+             <b>服务地址：</b> 
+              <span ng-bind="order.address+order.addressInfo"></span>
+            </div>
+            <div>
+             <b>服务类型：</b>
+              <span ng-if="order.fixtype==10" style="color: blue;">我要修</span>
+              <span ng-if="order.fixtype==11" style="color: blue;">我要洗</span>
+              <span ng-if="order.fixtype==12" style="color: blue;">我要装</span>
+            </div>
+            <div>
+            <b>下单需求：</b>  <span ng-bind="order.info"></span>
+            </div>
+            <div>
+             <b>下单时间：</b> <span show-time="{{order.lastupdate}}" show-time-format="y-M-d h:m:s"></span>
+            </div>
+            
+            <div>
+              <div ng-repeat="d in list">
+                <img ng-src="{{baseurl+d.objectName}}" alt="" class="img-responsive center-block">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="bottom-bar yellow div-zt2" fixed-bottom>
+    <div class="content">
+      <span class="btn button" ng-click="jd();">接单</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbMessageDAO">
+
+  <select id="queryAll" resultType="TbMessage">
+    select mid,mtype,uid,info,readed,lastupdate from TbMessage
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbMessage
+  </select>
+
+  <select id="queryByKey" parameterType="TbMessage" resultType="TbMessage">
+    select mid,mtype,uid,info,readed,lastupdate from TbMessage
+    where mid=#{mid}
+  </select>
+
+  <insert id="add" parameterType="TbMessage">
+    insert into TbMessage(mtype,uid,info)
+    values(#{mtype},#{uid},#{info})
+  </insert>
+
+  <update id="update" parameterType="TbMessage">
+    update TbMessage set mtype=#{mtype},uid=#{uid},info=#{info},readed=#{readed},lastupdate=#{lastupdate}
+    where mid=#{mid}
+  </update>
+
+  <update id="updateReaded" parameterType="TbMessage">
+    update TbMessage set readed=#{readed}
+    where mid=#{mid}
+  </update>
+
+  <delete id="delete" parameterType="TbMessage">
+    delete from TbMessage
+    where mid=#{mid}
+  </delete>
+
+</mapper>

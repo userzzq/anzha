@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbCityDAO">
+    
+  <select id="queryAll" resultType="TbCity">
+    select cid,pid,city,info,lastupdate from TbCity
+  </select>
+  
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbCity
+  </select>
+  
+  <select id="queryByKey" parameterType="TbCity" resultType="TbCity">
+    select cid,pid,city,info,lastupdate from TbCity 
+    where cid=#{cid}
+  </select>
+  
+  <insert id="add" parameterType="TbCity">
+    insert into TbCity(pid,city,info,lastupdate)
+    values(#{pid},#{city},#{info},#{lastupdate})
+  </insert>
+  
+  <update id="update" parameterType="TbCity">
+    update TbCity set pid=#{pid},city=#{city},info=#{info},lastupdate=#{lastupdate}
+    where cid=#{cid}
+  </update>
+  
+  <delete id="delete" parameterType="TbCity" >
+    delete from TbCity
+    where cid=#{cid}
+  </delete>
+  
+</mapper>

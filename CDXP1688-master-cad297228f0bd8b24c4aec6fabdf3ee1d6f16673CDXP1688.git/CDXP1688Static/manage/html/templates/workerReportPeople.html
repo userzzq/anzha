@@ -1,0 +1,26 @@
+<div ng-controller="WorkerReportPeopleCtrl">
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <thead>
+          <tr class="bg-info">
+            <th>人员类型</th>
+            <th>姓名</th>
+            <th>电话</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr ng-repeat="p in peoples">
+          <td ng-bind="p.type.typeName"></td>
+          <td ng-bind="p.username"></td>
+          <td ng-bind="p.phone"></td>
+        </tr>
+      </tbody>
+      </thead>
+    </table>
+  </div>
+
+  <div class="text-center">
+    <span class="btn btn-info" ng-click="closeMe();">关闭</span>
+  </div>
+</div>

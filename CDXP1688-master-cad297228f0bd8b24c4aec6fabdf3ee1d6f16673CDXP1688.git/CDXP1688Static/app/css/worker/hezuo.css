@@ -1,0 +1,33 @@
+.worker-hezuo .top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.worker-hezuo .top-bar .content {
+  padding: 1.5rem;
+}
+.worker-hezuo .yellow {
+  background: #e72d20;
+  color: #ffffff;
+}
+.worker-hezuo .div-zt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 图片展示部分 */
+
+.worker-hezuo .div-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.worker-hezuo .div-image {
+  width: 48%;
+  padding: 0.5rem 0px;
+}

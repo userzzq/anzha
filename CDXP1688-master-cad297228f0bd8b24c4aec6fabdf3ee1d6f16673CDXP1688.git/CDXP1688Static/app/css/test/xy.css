@@ -1,0 +1,48 @@
+.worker-xy .top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.worker-xy .top-bar .content {
+  padding: 1.5rem;
+}
+.worker-xy .yellow {
+  background: #e72d20;
+  color: #ffffff;
+}
+.worker-xy .div-zt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.worker-xy .pd10{
+  padding: 1rem;
+}
+.worker-xy .div-zy {
+  display: flex;
+}
+
+.worker-xy .div-zy1 {
+  flex: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.worker-xy .div-zy2 {
+  flex: 80%;
+}
+.worker-xy .arrow:after {
+  content: ' ';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  -webkit-transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+  transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+}

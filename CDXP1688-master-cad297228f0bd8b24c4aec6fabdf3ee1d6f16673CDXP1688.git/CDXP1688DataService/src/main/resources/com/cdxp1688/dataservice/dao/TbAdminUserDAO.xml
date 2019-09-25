@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbAdminUserDAO">
+
+  <select id="login" parameterType="TbAdminUser" resultType="TbAdminUser">
+    select auid,username,password,nickname,isEnable,lastupdate from TbAdminUser
+    where username=#{username} and password=#{password} and isEnable='y'
+  </select>
+
+  <update id="modifyPwd" parameterType="TbAdminUser">
+    update TbAdminUser set password=#{password} where auid=#{auid}
+  </update>
+
+  <select id="queryAll" resultType="TbAdminUser">
+    select auid,username,password,nickname,isEnable,lastupdate from TbAdminUser
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbAdminUser
+  </select>
+
+  <select id="queryByKey" parameterType="TbAdminUser" resultType="TbAdminUser">
+    select auid,username,password,nickname,isEnable,lastupdate from TbAdminUser
+    where auid=#{auid}
+  </select>
+
+  <insert id="add" parameterType="TbAdminUser">
+    insert into TbAdminUser(username,password,nickname,isEnable,lastupdate)
+    values(#{username},#{password},#{nickname},#{isEnable},#{lastupdate})
+  </insert>
+
+  <update id="update" parameterType="TbAdminUser">
+    update TbAdminUser set username=#{username},password=#{password},nickname=#{nickname},isEnable=#{isEnable},lastupdate=#{lastupdate}
+    where auid=#{auid}
+  </update>
+
+  <delete id="delete" parameterType="TbAdminUser">
+    delete from TbAdminUser
+    where auid=#{auid}
+  </delete>
+
+</mapper>

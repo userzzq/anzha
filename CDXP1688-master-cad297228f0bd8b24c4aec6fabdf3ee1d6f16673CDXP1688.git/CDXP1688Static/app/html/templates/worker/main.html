@@ -1,0 +1,16 @@
+<div ng-controller="WorkerMainCtrl" class="worker-main">
+  <div class="top-bar yellow" fixed-top>
+    <div class="content">
+      <span>欢迎</span><span ng-bind="worker.name"></span>
+    </div>
+  </div>
+  <div class="main" fixed-to-next>
+    <div ng-include="incPage" class="include-page"></div>
+  </div>
+  <div class="bottom-menus baise" fixed-bottom>
+    <div ng-repeat="m in menus" class="menu text-center">
+      <div class="lytbs2"><i class="iconfont" ng-bind-html="m.icon" ng-class="{'true':'lytbs'}[m.page==selectMenu.page]" ng-click="changeMenu($index);">&#xe606;</i></div>
+      <span ng-bind="m.text" ng-class="{'true':'lytbs'}[m.page==selectMenu.page]" ng-click="changeMenu($index);"></span>
+    </div>
+  </div>
+</div>

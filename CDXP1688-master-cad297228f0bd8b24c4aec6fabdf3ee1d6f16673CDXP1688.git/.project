@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>CDXP1688-master-cad297228f0bd8b24c4aec6fabdf3ee1d6f16673CDXP1688.git</name>
+	<comment>Project CDXP1688-master-cad297228f0bd8b24c4aec6fabdf3ee1d6f16673CDXP1688.git created by Buildship.</comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.buildship.core.gradleprojectbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+	</natures>
+</projectDescription>

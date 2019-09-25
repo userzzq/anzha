@@ -1,0 +1,109 @@
+/*头部导航条*/
+.user-index .ul1 {
+  display: flex;
+  justify-content: space-around;
+  background-color: #e72d20;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.user-index .ul1 .li1 {
+  width: 33.33333%;
+}
+
+.user-index .li1 i {
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border-right: 1px solid #ffffff;
+  font-size: 4rem;
+}
+
+.user-index .li1 div {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;
+  border-right: 1px solid #ffffff;
+}
+
+.user-index .li1:hover {
+  background-color: #f73201;
+}
+
+/* 系统公告边框 */
+.user-index .ggborder {
+  border-style: dashed;
+  border-color: #e72d20;
+  border-width: 2px;
+  color: #e4a00e;
+  font-size: 2rem;
+}
+
+/* 地图边框 */
+.user-index .dtborder {
+  border-style: solid;
+  border-width: 2px;
+  color: #e72d20;
+  font-size: 2rem;
+  display: flex;
+  align-items: stretch;
+}
+
+/* 居中 */
+.user-index .jz {
+  text-align: center;
+}
+
+/* 按钮 */
+.user-index .buttons {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  background-color: #e72d20;
+}
+
+.user-index .button {
+  border-radius: 3px;
+  background-color: #f17a72;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 10px 5px;
+}
+
+.user-index .button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.user-index .button span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.user-index .button:hover span {
+  padding-right: 25px;
+}
+
+.user-index .button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* 地图 */
+.user-index #mymap {
+  width: 100%;
+}

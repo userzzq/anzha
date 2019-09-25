@@ -1,0 +1,16 @@
+/CDXP1688DataService/.classpath
+/CDXP1688DataService/.gradle
+/CDXP1688DataService/bin
+/CDXP1688DataService/build
+/CDXP1688DataService/gradle
+/CDXP1688DataService/logs
+/CDXP1688Static/nginx-path.bat
+/CDXP1688Static/browser.js
+/CDXP1688Static/nginx/temp
+/CDXP1688Static/nginx/logs
+/CDXP1688Static/node_modules
+/CDXP1688Static/dist
+/CDXP1688DataService/gradlew
+/CDXP1688DataService/gradlew.bat
+/CDXP1688Static/spring-path.bat
+/CDXP1688DataService/uploadfiles

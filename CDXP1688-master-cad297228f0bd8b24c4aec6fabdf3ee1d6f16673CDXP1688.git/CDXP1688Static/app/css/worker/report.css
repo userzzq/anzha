@@ -1,0 +1,12 @@
+.worker-report .report-form {
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+}
+
+.worker-report .report-form .input-group {
+  margin: 1rem 0px;
+}
+
+.worker-report .yellow{
+  background:#e72d20;
+  color: #ffffff;
+}

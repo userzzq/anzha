@@ -1,0 +1,74 @@
+.worker-jiedan  .arrow:after {
+  content: ' ';
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-width: 2px 2px 0 0;
+  border-style: solid;
+  -webkit-transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+  transform: matrix(-0.71, -0.71, 0.71, -0.71, 0, 0);
+}
+
+
+.worker-jiedan .qzjz{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.worker-jiedan .gk1{
+  display: flex;
+  height: 30rem;
+}
+.worker-jiedan .zuoyou {
+  width: 100%;
+  display: flex;
+}
+.worker-jiedan .zuoyou1 {
+  flex: 80%;
+}
+.worker-jiedan .zuoyou2 {
+  flex: 20%;
+}
+
+.worker-jiedan .top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+.worker-jiedan .bottom-bar {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+.worker-jiedan .bottom-bar .content {
+  padding: 0.8rem;
+}
+
+.worker-jiedan .top-bar .content {
+  padding: 1.5rem;
+}
+.worker-jiedan .yellow {
+  background: #e72d20;
+  color: #ffffff;
+}
+.worker-jiedan .div-zt {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.worker-jiedan .div-zt2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.worker-jiedan .button {
+  background-color: #f17a72;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+}

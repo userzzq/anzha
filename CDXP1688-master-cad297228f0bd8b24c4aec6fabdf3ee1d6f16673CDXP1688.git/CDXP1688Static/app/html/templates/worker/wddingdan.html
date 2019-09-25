@@ -1,0 +1,20 @@
+<div ng-controller="WorkerWddingdanCtrl" class="baobeiguanli">
+  <div class="top-bar yellow div-zy" fixed-top>
+    <div class="div-zy1">
+      <span class="arrow" ng-click="panhuiwode();"></span>
+    </div>
+    <div class="content div-zy2 text-center">
+      <span>我的订单</span>
+    </div>
+    <div class="div-zy1"></div>
+  </div>
+
+  <div class="main">
+    <div ng-include="incPage" class="include-page"></div>
+  </div>
+  <div class="bottom-menus baise" fixed-bottom>
+    <div ng-repeat="m in menus" class="menu text-center" ng-class="{'true':'yellow'}[m.page==selectMenu.page]" ng-click="changeMenu($index);">
+      <i class="iconfont">&#xe606;</i><span ng-bind="m.text"></span>
+    </div>
+  </div>
+</div>

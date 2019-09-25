@@ -1,0 +1,126 @@
+.user-weixiudingdan .zuoyou {
+  display: flex;
+  width: 28rem;
+  background: #ffffff;
+}
+/*div比例*/
+.user-weixiudingdan .zuoyou1 {
+  flex: 3%;
+  background: #a0a0a0;
+}
+.user-weixiudingdan .zuoyou2 {
+  flex: 97%;
+}
+.user-weixiudingdan .zy {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+}
+.user-weixiudingdan .zy1 {
+  flex: 60%;
+}
+.user-weixiudingdan .zy2 {
+  flex: 40%;
+}
+.user-weixiudingdan .zy3 {
+  flex: 20%;
+}
+
+.user-weixiudingdan .zy4 {
+  flex: 80%;
+}
+
+.user-weixiudingdan .jz {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+}
+.user-weixiudingdan .bj {
+  padding: 1rem 0rem 0rem 1rem;
+}
+.user-weixiudingdan .span-color {
+  background: #e72d20;
+  color: #ffffff;
+  padding: 0.2rem 0.9rem 0.2rem 0.9rem;
+}
+
+.user-weixiudingdan .weixiudingdan-form {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.user-weixiudingdan .input-group-addon:first-child {
+  border-right: 0;
+  color: #ffffff;
+  background-color: #e72d20;
+}
+
+.user-weixiudingdan .weixiudingdan-form .input-group {
+  margin: 1rem 0px;
+}
+.user-weixiudingdan .write {
+  color: #ffffff;
+}
+.user-weixiudingdan .div-head {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: #e72d20;
+}
+
+.user-weixiudingdan .buttons {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  background-color: #e72d20;
+}
+
+.user-weixiudingdan .button {
+  border-radius: 3px;
+  background-color: #d43030;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2rem;
+  padding: 8px;
+  margin: 5px;
+}
+
+.user-weixiudingdan .pd10 {
+  padding: 10px;
+}
+
+.user-weixiudingdan .wz {
+  font-size: 1.5rem;
+  color: #e72d20;
+}
+
+.user-weixiudingdan .wz1 {
+  font-size: 15px;
+  color: rgb(131, 131, 131);
+}
+
+.user-weixiudingdan .gk {
+  height: 100%;
+  width: 100%;
+  background-image: url('/app/images/lxkf.png');
+}
+
+.user-weixiudingdan .bianxian {
+  border-top: 0.3rem solid  rgb(187, 184, 184);
+}
+.user-weixiudingdan .bianxian1 {
+  border: 0.1rem solid #f55656;
+  border-radius: 0.4rem;
+  margin: 0.3rem;
+}
+
+.user-weixiudingdan .fx {
+  display: flex;
+}
+
+.user-weixiudingdan .fx > div {
+  flex-grow: 1;
+  text-align: center;
+  margin: 0.8rem;
+}

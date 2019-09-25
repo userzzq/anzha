@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbPayRecodeDAO">
+
+  <select id="queryAll" resultType="TbPayRecode">
+    select prid,wid,price,lastupdate from TbPayRecode
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbPayRecode
+  </select>
+
+  <select id="queryWorker" resultType="TbWorker" parameterType="TbWorker">
+    select t.*,(select sum(price) from TbPayRecode where wid = t.wid) 'payTotal',
+    (select sum(price) from TbFixOrderDetail where ufoid in( select ufoid from TbUserFixOrder where ufid in ( select ufid from TbUserFixInfo where status = 99) and wid = t.wid)) 'total'
+    from TbWorker t
+    where t.wid in ( select distinct wid from TbUserFixOrder
+    where ufid in ( select
+    ufid from TbUserFixInfo where status = 99) )
+    and isEnable = 'y'
+    <!-- 通过phone过滤 -->
+    <if test="phone!=null and phone!=''">
+      and t.phone like #{phone}
+    </if>
+    <!-- 通过name过滤 -->
+    <if test="name!=null and name!=''">
+      and t.name like #{name}
+    </if>
+  </select>
+
+  <select id="queryWorker_COUNT" resultType="int" parameterType="TbWorker">
+    select count(*) from TbWorker
+    where wid in ( select distinct wid from TbUserFixOrder where ufid in ( select ufid from TbUserFixInfo where status = 99) )
+    and isEnable = 'y'
+    <!-- 通过phone过滤 -->
+    <if test="phone!=null and phone!=''">
+      and phone like #{phone}
+    </if>
+    <!-- 通过name过滤 -->
+    <if test="name!=null and name!=''">
+      and name like #{name}
+    </if>
+  </select>
+
+  <select id="queryByWorker" resultType="TbPayRecode" parameterType="TbPayRecode">
+    select prid,wid,price,lastupdate from TbPayRecode
+    where wid=#{wid}
+    order by lastupdate desc
+  </select>
+
+  <select id="queryByWorker_COUNT" resultType="int" parameterType="TbPayRecode">
+    select count(*) from TbPayRecode
+    where wid=#{wid}
+  </select>
+
+  <select id="queryWorkerPay" resultType="TbWorker" parameterType="TbWorker">
+    select t.*,(select sum(price) from TbPayRecode where wid = t.wid) 'payTotal',
+    (select sum(price) from TbFixOrderDetail where ufoid in( select ufoid from TbUserFixOrder where ufid in ( select ufid from TbUserFixInfo where status = 99) and wid = t.wid)) 'total'
+    from TbWorker t
+    where t.wid = #{wid}
+  </select>
+
+  <select id="queryByKey" parameterType="TbPayRecode" resultType="TbPayRecode">
+    select prid,wid,price,lastupdate from TbPayRecode
+    where prid=#{prid}
+  </select>
+
+  <insert id="add" parameterType="TbPayRecode">
+    insert into TbPayRecode(wid,price,lastupdate)
+    values(#{wid},#{price},#{lastupdate})
+  </insert>
+
+  <update id="update" parameterType="TbPayRecode">
+    update TbPayRecode set wid=#{wid},price=#{price},lastupdate=#{lastupdate}
+    where prid=#{prid}
+  </update>
+
+  <delete id="delete" parameterType="TbPayRecode">
+    delete from TbPayRecode
+    where prid=#{prid}
+  </delete>
+
+  <select id="queryWorkerTotal" resultType="java.math.BigDecimal" parameterType="TbPayRecode">
+    select sum(price) from TbPayRecode
+    where wid = #{wid}
+  </select>
+
+</mapper>

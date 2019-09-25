@@ -1,0 +1,16 @@
+.workerReport{
+  background-image:url('../images/1.jpg');
+  background-size:cover;
+}
+.workerReport .bg-color{
+  background:rgb(43, 46, 44);
+}
+
+.workerReport .bbxx-color{
+  color: #ffffff;
+}
+
+.workerReport .span-color{
+  background-color:  rgb(213, 245, 255);
+  color: #000000;
+}

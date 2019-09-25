@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 工具类 mapper -->
+<mapper namespace="com.cdxp1688.dataservice.dao.UtilsDAO">
+  <!-- 查询数据库当前时间 -->
+  <select id="queryTime" resultType="java.util.Date">
+    select now()
+  </select>
+  <!-- 查询token（且要有效） -->
+  <select id="queryToken" parameterType="TbToken" resultType="TbToken">
+    select token,lastupdate from TbToken
+    where token=#{token} and timestampdiff(minute,lastupdate,now())
+    &lt;=
+    (select configValue from TbConfig where configKey='token.timeout')
+  </select>
+
+  <!-- 添加token -->
+  <insert id="addToken" parameterType="TbToken">
+    insert into TbToken(token,lastupdate) values(#{token},now())
+  </insert>
+
+  <!-- 更新token时间 -->
+  <update id="updateToken" parameterType="TbToken">
+    update TbToken set lastupdate=now() where token=#{token}
+  </update>
+
+  <!-- 删除所有过期token -->
+  <delete id="deleteTokens">
+    delete from TbToken where timestampdiff(minute,lastupdate,now())
+    &gt;
+    (select configValue from TbConfig where configKey='token.timeout')
+  </delete>
+
+  <!-- 删除所有过期的TokenInfo -->
+  <delete id="deleteTokenInfos">
+    delete from TbTokenInfo
+    where token in
+    (
+    select token from TbToken
+    where timestampdiff(minute,lastupdate,now())
+    &gt;
+    (
+    select configValue from TbConfig
+    where configKey='token.timeout'
+    )
+    )
+  </delete>
+
+  <!-- 图片校验码相关 -->
+  <insert id="addImageCode" parameterType="TbTokenInfo">
+    insert into TbTokenInfo(token,infoKey,info,lastupdate)
+    values(#{token},'imagecode',#{info},now())
+  </insert>
+
+  <select id="queryImageCode" parameterType="TbTokenInfo" resultType="TbTokenInfo">
+    select token,infoKey,info,lastupdate from TbTokenInfo
+    where token=#{token} and infoKey='imagecode'
+  </select>
+
+  <update id="updateImageCode" parameterType="TbTokenInfo">
+    update TbTokenInfo set info=#{info},lastupdate=now()
+    where token=#{token} and infoKey='imagecode'
+  </update>
+
+  <delete id="deleteImageCode" parameterType="TbTokenInfo">
+    delete from TbTokenInfo where token=#{token} and infoKey='imagecode'
+  </delete>
+
+  <!-- 电话验证码 -->
+  <insert id="addPhoneCode" parameterType="TbTokenInfo">
+    insert into TbTokenInfo(token,infoKey,info,lastupdate)
+    values(#{token},'phonecode',#{info},now())
+  </insert>
+
+  <select id="queryPhoneCode" parameterType="TbTokenInfo" resultType="TbTokenInfo">
+    select token,infoKey,info,lastupdate from TbTokenInfo
+    where token=#{token} and infoKey='phonecode'
+  </select>
+
+  <delete id="deletePhoneCode" parameterType="TbTokenInfo">
+    delete from TbTokenInfo where token=#{token} and infoKey='phonecode'
+  </delete>
+
+  <delete id="deletePhoneCodes">
+    delete from TbTokenInfo where infoKey='phonecode' and timestampdiff(minute,lastupdate,now()) &gt; 30
+  </delete>
+
+  <!-- 找回密码验证码 -->
+  <insert id="addFindPwd" parameterType="TbTokenInfo">
+    insert into TbTokenInfo(token,infoKey,info,lastupdate)
+    values(#{token},'findpwd',#{info},now())
+  </insert>
+
+  <select id="queryFindPwd" parameterType="TbTokenInfo" resultType="TbTokenInfo">
+    select token,infoKey,info,lastupdate from TbTokenInfo
+    where token=#{token} and infoKey='findpwd'
+  </select>
+
+  <delete id="deleteFindPwd" parameterType="TbTokenInfo">
+    delete from TbTokenInfo where token=#{token} and infoKey='findpwd'
+  </delete>
+
+  <delete id="deleteFindPwds">
+    delete from TbTokenInfo where infoKey='findpwd' and timestampdiff(minute,lastupdate,now()) &gt; 30
+  </delete>
+
+  <!-- worker相关 -->
+  <insert id="addWorker" parameterType="TbTokenInfo">
+    insert into TbTokenInfo(token,infoKey,info,lastupdate)
+    values(#{token},'worker',#{info},now())
+  </insert>
+
+  <select id="queryWorker" parameterType="TbTokenInfo" resultType="TbWorker">
+    select wid,wtid,cid,address,phone,name,password,recommend,isEnable,inWork,lastupdate from TbWorker
+    where wid =
+    (
+    select info from TbTokenInfo
+    where token=#{token} and infoKey='worker'
+    )
+  </select>
+
+  <delete id="deleteWorker" parameterType="TbTokenInfo">
+    delete from TbTokenInfo where token=#{token} and infoKey='worker'
+  </delete>
+
+  <!-- AdminUser相关 -->
+  <insert id="addAdminUser" parameterType="TbTokenInfo">
+    insert into TbTokenInfo(token,infoKey,info,lastupdate)
+    values(#{token},'AdminUser',#{info},now())
+  </insert>
+
+  <select id="queryAdminUser" parameterType="TbTokenInfo" resultType="TbAdminUser">
+    select auid,username,password,nickname,isEnable,lastupdate from TbAdminUser
+    where auid =
+    (
+    select info from TbTokenInfo
+    where token=#{token} and infoKey='AdminUser'
+    )
+  </select>
+
+  <delete id="deleteAdminUser" parameterType="TbTokenInfo">
+    delete from TbTokenInfo where token=#{token} and infoKey='AdminUser'
+  </delete>
+
+  <!-- User相关 -->
+  <insert id="addUser" parameterType="TbTokenInfo">
+    insert into TbTokenInfo(token,infoKey,info,lastupdate)
+    values(#{token},'User',#{info},now())
+  </insert>
+
+  <select id="queryUser" parameterType="TbTokenInfo" resultType="TbUser">
+    select uid,phone,password,name,isEnable,lastupdate from TbUser
+    where uid =
+    (
+    select info from TbTokenInfo
+    where token=#{token} and infoKey='User'
+    )
+  </select>
+
+  <delete id="deleteUser" parameterType="TbTokenInfo">
+    delete from TbTokenInfo where token=#{token} and infoKey='User'
+  </delete>
+
+</mapper>

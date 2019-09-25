@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbWorkerTypeDAO">
+    
+  <select id="queryAll" resultType="TbWorkerType">
+    select wtid,typeName,typeInfo,isEnable,lastupdate from TbWorkerType
+  </select>
+  
+  <select id="queryAll_COUNT" resultType="int">
+    select count(*) from TbWorkerType
+  </select>
+  
+  <select id="queryByKey" parameterType="TbWorkerType" resultType="TbWorkerType">
+    select wtid,typeName,typeInfo,isEnable,lastupdate from TbWorkerType 
+    where wtid=#{wtid}
+  </select>
+  
+  <insert id="add" parameterType="TbWorkerType">
+    insert into TbWorkerType(typeName,typeInfo,isEnable,lastupdate)
+    values(#{typeName},#{typeInfo},#{isEnable},#{lastupdate})
+  </insert>
+  
+  <update id="update" parameterType="TbWorkerType">
+    update TbWorkerType set typeName=#{typeName},typeInfo=#{typeInfo},isEnable=#{isEnable},lastupdate=#{lastupdate}
+    where wtid=#{wtid}
+  </update>
+  
+  <delete id="delete" parameterType="TbWorkerType" >
+    delete from TbWorkerType
+    where wtid=#{wtid}
+  </delete>
+  
+</mapper>

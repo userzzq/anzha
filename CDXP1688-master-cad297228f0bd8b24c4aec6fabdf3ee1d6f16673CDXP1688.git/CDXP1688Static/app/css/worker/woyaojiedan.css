@@ -1,0 +1,82 @@
+.worker-woyaojiedan carousel {
+  width: 100%;
+  display: flex;
+}
+
+.worker-woyaojiedan img {
+  width: 100vw;
+}
+
+.worker-woyaojiedan .zuoyou {
+  width: 100%;
+  display: flex;
+}
+.worker-woyaojiedan .zuoyou1 {
+  flex: 80%;
+}
+.worker-woyaojiedan .zuoyou2 {
+  flex: 20%;
+}
+
+.worker-woyaojiedan .zuoyou5 {
+  flex: 50%;
+  text-align: center;
+}
+.worker-woyaojiedan .button {
+  background-color: #f17a72;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+}
+
+.worker-woyaojiedan .panel-bodyzz {
+  padding: 15px 15px 0px 15px;
+}
+
+.worker-woyaojiedan .zxzt {
+  background: #ffffff;
+}
+.worker-woyaojiedan .zxztnyyinchang {
+  border-left: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  background-color: transparent;
+  outline: none;
+}
+.worker-woyaojiedan .ztbtn {
+  background: #ffffff;
+  border: 0.1rem #000000 solid;
+  padding: 0.1rem 1rem 0.1rem 1rem;
+}
+/* .worker-woyaojiedan .jiedan.ng-enter {
+  position: absolute;
+  animation: move-in 0.5s;
+}
+
+.worker-woyaojiedan .jiedan.ng-leave {
+  position: absolute;
+  animation: move-out 0.5s;
+}
+
+@keyframes move-in {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+
+@keyframes move-out {
+  0% {
+    top: 0px;
+  }
+
+  100% {
+    top: -100%;
+  }
+} */

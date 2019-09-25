@@ -1,0 +1,44 @@
+<div ng-controller="workerWodedingdanCtrl" class="worker-wodedingdan">
+  <div class="main">
+    <div class="div-images">
+      <div class="text-center" style="width: 100%; background-color: #ffffff; padding: 0.8rem;" ng-click="requery();">...点击刷新...</div>
+      <div class="panel panel-default" ng-repeat="d in list">
+        <div class="panel-body">
+          <div class="form-group">
+
+            <div class="zuoyou">
+              <div class="zuoyou1">
+                <div>姓名: <span ng-bind="d.fixinfo.user.name"></span> </div>
+                <div>电话: <span ng-bind="d.fixinfo.phone"></span></div>
+                <div>地址: <span ng-bind="d.fixinfo.address+d.fixinfo.addressInfo"></span></div>
+                <div>类型：
+                  <span ng-if="d.fixinfo.fixtype==10">我要修</span>
+                  <span ng-if="d.fixinfo.fixtype==11">我要洗</span>
+                  <span ng-if="d.fixinfo.fixtype==12">我要装</span>
+                </div>
+                <div>状态：
+                  <span style="color: blue;">
+                    <span ng-if="d.fixinfo.status==11">已经接单</span>
+                    <span ng-if="d.fixinfo.status==13">已经定价</span>
+                    <span ng-if="d.fixinfo.status==14">服务完成,等待支付</span>
+                    <span ng-if="d.fixinfo.status==15">已经支付</span>
+                  </span>
+                </div>
+                <div>时间：<span show-time="{{d.lastupdate}}" show-time-format="y-M-d h:m:s"></span></div>
+              </div>
+
+              <div class="zuoyou2">
+                <span class="btn btn-info" ng-if="d.fixinfo.status==11  && !d.price" ng-click="baojia(d);">报价</span>
+                <span class="btn btn-danger" ng-if="d.fixinfo.status==11 && d.price" ng-click="baojia(d);">修改报价</span>
+                <span class="btn btn-danger" ng-if="d.fixinfo.status==13" ng-click="wcwx(d);">完成服务</span>
+                <span class="btn btn-danger" ng-if="d.fixinfo.status==15" ng-click="wccdd(d);">完成此订单</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="color: #e72d20;" ng-click="ckgd();" ng-if="page.pageNumber < page.pageCount">查看更多</div>
+  </div>
+
+</div>

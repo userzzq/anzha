@@ -1,0 +1,43 @@
+.worker-ksjd .ksjd-form .input-group {
+  margin: 1rem 0px;
+}
+
+.worker-ksjd .ksjd-form .types {
+  margin: 1rem 0px;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+.worker-ksjd .ksjd-form {
+  padding: 0.5rem 0rem 0.5rem 0rem;
+}
+.worker-ksjd .div-head {
+  top: 0px;
+  background-color: #e72d20;
+  color: #ffffff;
+}
+.worker-ksjd .buttons {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
+  background-color:#e72d20 ;
+}
+
+.worker-ksjd .button {
+  border-radius: 3px;
+  background-color: #f17a72;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5rem 4rem 0.5rem 4rem;
+}
+
+.worker-ksjd .pd10 {
+  padding: 10px;
+}
+
+.worker-ksjd .sp-red{
+  background-color: #e72d20;
+  color: #ffffff;
+}

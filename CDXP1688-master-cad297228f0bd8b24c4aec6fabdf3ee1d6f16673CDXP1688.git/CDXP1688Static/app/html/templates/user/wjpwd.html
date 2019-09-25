@@ -1,0 +1,48 @@
+<div ng-controller="UserWJpwdCtrl" class="h100 user-wjpwd">
+  <div class="div-head">
+    <div class="pd10 alpha-div text-center">
+      <span class="h3">
+        找回密码
+      </span>
+    </div>
+  </div>
+
+  <div class="wjpwd-form">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon sp-red">电话</span>
+            <input type="text" ng-model="tbUser.phone" focus-on="{{focus.phone}}" class="form-control" placeholder="请输入电话">
+            <span class="input-group-addon btn sp-red" ng-click="sendPhoneCode();">获取验证码</span>
+          </div>
+          <!-- <div class="text-center types">
+            <span>图片校验码</span>
+            <image-code></image-code>
+            <span>点击图片刷新</span>
+          </div> -->
+          <!-- <div class="input-group">
+            <input type="text" ng-model="model.imageCode" class="form-control" placeholder="请输入图片校验码">
+            <span class="input-group-addon btn sp-red" ng-click="sendPhoneCode();">发送手机验证码</span>
+          </div> -->
+          <div class="input-group">
+            <span class="input-group-addon sp-red">手机验证码</span>
+            <input type="text" ng-model="model.phoneCode" class="form-control" placeholder="请输入手机验证码">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon sp-red">输入新密码</span>
+            <input type="password" ng-model="tbUser.password" class="form-control" placeholder="请输入登录密码">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon sp-red">确认新密码</span>
+            <input type="password" ng-model="model.password" class="form-control" placeholder="确认密码">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer buttons text-center" fixed-bottom>
+    <span class="btn button" ng-click="wjpwd();">确认修改</span>
+    <span class="btn button" ng-click="login();">返回登录</span>
+  </div>
+</div>

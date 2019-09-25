@@ -1,0 +1,64 @@
+<div ng-controller="WorkerWoyaojiedanCtrl" class="worker-woyaojiedan">
+  <div id="carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="images/hezuo/hezuo019.jpg" alt="...">
+      </div>
+      <div class="item">
+        <img src="images/hezuo/hezuo004.jpg" alt="...">
+      </div>
+      <div class="item">
+        <img src="images/hezuo/hezuo010.jpg" alt="...">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="zuoyou" style="width: 100%; background-color: #ffffff; padding: 0.8rem;">
+      <div class="zuoyou5">
+        <span ng-if="worker.inWork=='y'" style="color: rgb(32, 204, 75);">在线中</span>
+        <span ng-if="worker.inWork=='n'" style="color: rgb(255, 0, 64);">离线中</span>
+      </div>
+      <div class="zuoyou5">
+        <span ng-if="worker.inWork=='y'" class="btn ztbtn" ng-click="changeEnable(worker,'n');">离线</span>
+        <span ng-if="!worker || !worker.inWork || worker.inWork=='n'" class="btn ztbtn" ng-click="changeEnable(worker,'y');">在线</span>
+      </div>
+    </div>
+
+    <div ng-if="worker.inWork=='y'" class="panel panel-default" ng-repeat="d in list">
+      <div class="panel-bodyzz">
+        <div class="form-group">
+
+          <div class="zuoyou">
+            <div class="zuoyou1">
+              <div>电话：<b><span ng-bind="d.phone"></span></b></div>
+              <div>姓名：<b><span ng-bind="d.user.name"></span></b></div>
+              <div>类型：
+                <span ng-if="d.fixtype==10" style="color: blue;">我要修</span>
+                <span ng-if="d.fixtype==11" style="color: blue;">我要洗</span>
+                <span ng-if="d.fixtype==12" style="color: blue;">我要装</span>
+              </div>
+              <div>下单时间：<b><span show-time="{{d.lastupdate}}" show-time-format="y-M-d h:m:s"></span></b></div>
+            </div>
+            <div class="zuoyou2">
+              <span class="btn button" ng-click="ckxq(d);">查看详情</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="zuoyou" ng-if="worker.inWork=='y'">
+      <div class="zuoyou5">
+        <div class="text-center" style="color: #e72d20;" ng-click="ckgd();" ng-if="page.pageNumber < page.pageCount">查看更多</div>
+      </div>
+      <div class="zuoyou5">
+        <div class="text-center" ng-click="requery();" style="color: #e72d20;" ng-if="page.pageNumber < page.pageCount">点击刷新</div>
+      </div>
+    </div>
+  </div>
+</div>

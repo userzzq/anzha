@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cdxp1688.dataservice.dao.TbWorkerReportDAO">
+
+  <select id="queryByWid" resultType="TbWorkerReport" parameterType="TbWorker">
+    select wrid,wid,cid,address,username,phone,areainfo,opendate,decorate,lastupdate from TbWorkerReport
+    where wid=#{wid}
+    order by
+    lastupdate desc
+  </select>
+
+  <select id="queryByWid_COUNT" resultType="int" parameterType="TbWorker">
+    select count(*) from TbWorkerReport
+    where wid=#{wid}
+  </select>
+
+  <select id="queryAll" resultType="TbWorkerReport" parameterType="TbWorkerReport">
+    select r.wrid,r.wid,r.cid,r.address,r.username,r.phone,r.areainfo,r.opendate,r.decorate,r.lastupdate,w.name 'worker.name',w.phone 'worker.phone'
+    from TbWorkerReport r
+    left join TbWorker w on
+    r.wid=w.wid
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and r.phone like #{phone}
+      </if>
+      <!-- 通过username过滤 -->
+      <if test="username!=null and username!=''">
+        and r.username like #{username}
+      </if>
+      <!-- 通过worker.phone过滤 -->
+      <if test="worker!=null and worker.phone!=null and worker.phone!=''">
+        and w.phone like #{worker.phone}
+      </if>
+      <!-- 通过worker.name过滤 -->
+      <if test="worker!=null and worker.name!=null and worker.name!=''">
+        and w.name like #{worker.name}
+      </if>
+    </trim>
+    order by lastupdate desc
+  </select>
+
+  <select id="queryAll_COUNT" resultType="int" parameterType="TbWorkerReport">
+    select count(r.wrid)
+    from TbWorkerReport r
+    left join TbWorker w on r.wid=w.wid
+    <trim prefix="where" prefixOverrides="and">
+      <!-- 通过phone过滤 -->
+      <if test="phone!=null and phone!=''">
+        and r.phone like #{phone}
+      </if>
+      <!-- 通过username过滤 -->
+      <if test="username!=null and username!=''">
+        and r.username like #{username}
+      </if>
+      <!-- 通过worker.phone过滤 -->
+      <if test="worker!=null and worker.phone!=null and worker.phone!=''">
+        and w.phone like #{worker.phone}
+      </if>
+      <!-- 通过worker.name过滤 -->
+      <if test="worker!=null and worker.name!=null and worker.name!=''">
+        and w.name like #{worker.name}
+      </if>
+    </trim>
+  </select>
+
+  <select id="queryByKey" parameterType="TbWorkerReport" resultType="TbWorkerReport">
+    select wrid,wid,cid,address,username,phone,areainfo,opendate,decorate,lastupdate from TbWorkerReport
+    where wrid=#{wrid}
+  </select>
+
+  <insert id="add" parameterType="TbWorkerReport" useGeneratedKeys="true" keyProperty="wrid">
+    insert into TbWorkerReport(wid,cid,address,username,phone,areainfo,opendate,decorate)
+    values(#{wid},#{cid},#{address},#{username},#{phone},#{areainfo},#{opendate},#{decorate})
+  </insert>
+
+  <update id="update" parameterType="TbWorkerReport">
+    update TbWorkerReport set
+    wid=#{wid},cid=#{cid},address=#{address},username=#{username},phone=#{phone},areainfo=#{areainfo},opendate=#{opendate},decorate=#{decorate},lastupdate=#{lastupdate}
+    where wrid=#{wrid}
+  </update>
+
+  <delete id="delete" parameterType="TbWorkerReport">
+    delete from TbWorkerReport
+    where wrid=#{wrid}
+  </delete>
+
+</mapper>

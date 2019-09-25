@@ -1,0 +1,41 @@
+.worker-wodedingdan .qzjz{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.worker-wodedingdan .gk1{
+  display: flex;
+  height: 30rem;
+}
+
+.worker-wodedingdan .zuoyou {
+  width: 100%;
+  display: flex;
+}
+.worker-wodedingdan .zuoyou1 {
+  flex: 80%;
+}
+.worker-wodedingdan .zuoyou2 {
+  flex: 20%;
+}
+
+.worker-wodedingdan .top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 100;
+}
+
+.worker-wodedingdan .top-bar .content {
+  padding: 1.5rem;
+}
+.worker-wodedingdan .yellow {
+  background: #e72d20;
+  color: #ffffff;
+}
+.worker-wodedingdan .div-zt {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
